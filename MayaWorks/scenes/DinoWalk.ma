@@ -1,14 +1,15 @@
 //Maya ASCII 2018ff08 scene
 //Name: DinoWalk.ma
-//Last modified: Wed, Mar 27, 2019 11:55:49 AM
+//Last modified: Mon, Apr 01, 2019 04:04:57 PM
 //Codeset: 1252
-file -rdi 1 -ns "DinoRig" -rfn "DinoRigRN" -op "v=0;" -typ "mayaAscii" "C:/Users/ranju.raveendran/Documents/Unreal Projects/DinoExplorer/MayaWorks//scenes/DinoRig.ma";
-file -r -ns "DinoRig" -dr 1 -rfn "DinoRigRN" -op "v=0;" -typ "mayaAscii" "C:/Users/ranju.raveendran/Documents/Unreal Projects/DinoExplorer/MayaWorks//scenes/DinoRig.ma";
+file -rdi 1 -ns "DinoRig02" -rfn "DinoRig02RN" -op "v=0;" -typ "mayaAscii" "C:/Users/ranju.raveendran/Documents/Unreal Projects/DinoExplorer/MayaWorks//scenes/DinoRig02.ma";
+file -r -ns "DinoRig02" -dr 1 -rfn "DinoRig02RN" -op "v=0;" -typ "mayaAscii" "C:/Users/ranju.raveendran/Documents/Unreal Projects/DinoExplorer/MayaWorks//scenes/DinoRig02.ma";
 requires maya "2018ff08";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
 		 -nodeType "mentalrayItemsList" -dataType "byteArray" "Mayatomr" "2018.13  (3.14.5.1 - 274000.23818) ";
 requires "mtoa" "3.0.0.2";
 requires "stereoCamera" "10.0";
+requires "mtoa" "3.0.0.2";
 requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
@@ -20,13 +21,13 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "5F12A708-40EE-9A1A-E2D6-D78471627033";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1482.8971503131445 -57.765850369822829 196.77670677273937 ;
-	setAttr ".r" -type "double3" 91.282924915369108 0 -272.00508600527132 ;
+	setAttr ".t" -type "double3" 563.16037679207056 1427.8042720614071 507.7532014970572 ;
+	setAttr ".r" -type "double3" 78.082924915376637 -3.1805546814635168e-15 -564.00508600522073 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "EE96E687-4D25-4906-DF74-4C9BB711C552";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1468.4242683459656;
+	setAttr ".coi" 1642.7901650692963;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -53,14 +54,14 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "DC1C9AE9-4A96-1F3F-166B-56B32E24C44E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 54.103202756584807 -1049.4955969517944 253.96147028747342 ;
+	setAttr ".t" -type "double3" 62.267902021892247 -1049.4955969517944 125.07586045654858 ;
 	setAttr ".r" -type "double3" 89.999999999999986 0 0 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "7C795C71-4ABE-CE81-04F8-0A886A18778C";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 826.74776369984124;
-	setAttr ".ow" 521.65352032723331;
+	setAttr ".ow" 916.45201327927714;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -86,1198 +87,6 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode lightLinker -s -n "lightLinker1";
-	rename -uid "AD6E596F-43B0-45C2-5A53-D8A964E3939F";
-	setAttr -s 4 ".lnk";
-	setAttr -s 4 ".slnk";
-createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "10F06AB6-42BF-AD82-4BB5-AE8A54A23354";
-createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "6D096EF0-4E78-BC96-73DE-C78F26F4BB40";
-createNode displayLayerManager -n "layerManager";
-	rename -uid "18B5530A-4485-1F75-3B48-31BE093C7D12";
-createNode displayLayer -n "defaultLayer";
-	rename -uid "5729302D-411F-53B0-41B6-1A902E85973E";
-createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "0272652F-4467-DB53-B1F9-1C94F84F427C";
-createNode renderLayer -n "defaultRenderLayer";
-	rename -uid "0823800C-4B00-4117-7C1A-E384FD32585E";
-	setAttr ".g" yes;
-createNode reference -n "DinoRigRN";
-	rename -uid "4B5DC7F2-4A5C-1884-0DB1-509927CCBD5A";
-	setAttr -s 292 ".phl";
-	setAttr ".phl[1]" 0;
-	setAttr ".phl[2]" 0;
-	setAttr ".phl[3]" 0;
-	setAttr ".phl[4]" 0;
-	setAttr ".phl[5]" 0;
-	setAttr ".phl[6]" 0;
-	setAttr ".phl[7]" 0;
-	setAttr ".phl[8]" 0;
-	setAttr ".phl[9]" 0;
-	setAttr ".phl[10]" 0;
-	setAttr ".phl[11]" 0;
-	setAttr ".phl[12]" 0;
-	setAttr ".phl[13]" 0;
-	setAttr ".phl[14]" 0;
-	setAttr ".phl[15]" 0;
-	setAttr ".phl[16]" 0;
-	setAttr ".phl[17]" 0;
-	setAttr ".phl[18]" 0;
-	setAttr ".phl[19]" 0;
-	setAttr ".phl[20]" 0;
-	setAttr ".phl[21]" 0;
-	setAttr ".phl[22]" 0;
-	setAttr ".phl[23]" 0;
-	setAttr ".phl[24]" 0;
-	setAttr ".phl[25]" 0;
-	setAttr ".phl[26]" 0;
-	setAttr ".phl[27]" 0;
-	setAttr ".phl[28]" 0;
-	setAttr ".phl[29]" 0;
-	setAttr ".phl[30]" 0;
-	setAttr ".phl[31]" 0;
-	setAttr ".phl[32]" 0;
-	setAttr ".phl[33]" 0;
-	setAttr ".phl[34]" 0;
-	setAttr ".phl[35]" 0;
-	setAttr ".phl[36]" 0;
-	setAttr ".phl[37]" 0;
-	setAttr ".phl[38]" 0;
-	setAttr ".phl[39]" 0;
-	setAttr ".phl[40]" 0;
-	setAttr ".phl[41]" 0;
-	setAttr ".phl[42]" 0;
-	setAttr ".phl[43]" 0;
-	setAttr ".phl[44]" 0;
-	setAttr ".phl[45]" 0;
-	setAttr ".phl[46]" 0;
-	setAttr ".phl[47]" 0;
-	setAttr ".phl[48]" 0;
-	setAttr ".phl[49]" 0;
-	setAttr ".phl[50]" 0;
-	setAttr ".phl[51]" 0;
-	setAttr ".phl[52]" 0;
-	setAttr ".phl[53]" 0;
-	setAttr ".phl[54]" 0;
-	setAttr ".phl[55]" 0;
-	setAttr ".phl[56]" 0;
-	setAttr ".phl[57]" 0;
-	setAttr ".phl[58]" 0;
-	setAttr ".phl[59]" 0;
-	setAttr ".phl[60]" 0;
-	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
-	setAttr ".phl[63]" 0;
-	setAttr ".phl[64]" 0;
-	setAttr ".phl[65]" 0;
-	setAttr ".phl[66]" 0;
-	setAttr ".phl[67]" 0;
-	setAttr ".phl[68]" 0;
-	setAttr ".phl[69]" 0;
-	setAttr ".phl[70]" 0;
-	setAttr ".phl[71]" 0;
-	setAttr ".phl[72]" 0;
-	setAttr ".phl[73]" 0;
-	setAttr ".phl[74]" 0;
-	setAttr ".phl[75]" 0;
-	setAttr ".phl[76]" 0;
-	setAttr ".phl[77]" 0;
-	setAttr ".phl[78]" 0;
-	setAttr ".phl[79]" 0;
-	setAttr ".phl[80]" 0;
-	setAttr ".phl[81]" 0;
-	setAttr ".phl[82]" 0;
-	setAttr ".phl[83]" 0;
-	setAttr ".phl[84]" 0;
-	setAttr ".phl[85]" 0;
-	setAttr ".phl[86]" 0;
-	setAttr ".phl[87]" 0;
-	setAttr ".phl[88]" 0;
-	setAttr ".phl[89]" 0;
-	setAttr ".phl[90]" 0;
-	setAttr ".phl[91]" 0;
-	setAttr ".phl[92]" 0;
-	setAttr ".phl[93]" 0;
-	setAttr ".phl[94]" 0;
-	setAttr ".phl[95]" 0;
-	setAttr ".phl[96]" 0;
-	setAttr ".phl[97]" 0;
-	setAttr ".phl[98]" 0;
-	setAttr ".phl[99]" 0;
-	setAttr ".phl[100]" 0;
-	setAttr ".phl[101]" 0;
-	setAttr ".phl[102]" 0;
-	setAttr ".phl[103]" 0;
-	setAttr ".phl[104]" 0;
-	setAttr ".phl[105]" 0;
-	setAttr ".phl[106]" 0;
-	setAttr ".phl[107]" 0;
-	setAttr ".phl[108]" 0;
-	setAttr ".phl[109]" 0;
-	setAttr ".phl[110]" 0;
-	setAttr ".phl[111]" 0;
-	setAttr ".phl[112]" 0;
-	setAttr ".phl[113]" 0;
-	setAttr ".phl[114]" 0;
-	setAttr ".phl[115]" 0;
-	setAttr ".phl[116]" 0;
-	setAttr ".phl[117]" 0;
-	setAttr ".phl[118]" 0;
-	setAttr ".phl[119]" 0;
-	setAttr ".phl[120]" 0;
-	setAttr ".phl[121]" 0;
-	setAttr ".phl[122]" 0;
-	setAttr ".phl[123]" 0;
-	setAttr ".phl[124]" 0;
-	setAttr ".phl[125]" 0;
-	setAttr ".phl[126]" 0;
-	setAttr ".phl[127]" 0;
-	setAttr ".phl[128]" 0;
-	setAttr ".phl[129]" 0;
-	setAttr ".phl[130]" 0;
-	setAttr ".phl[131]" 0;
-	setAttr ".phl[132]" 0;
-	setAttr ".phl[133]" 0;
-	setAttr ".phl[134]" 0;
-	setAttr ".phl[135]" 0;
-	setAttr ".phl[136]" 0;
-	setAttr ".phl[137]" 0;
-	setAttr ".phl[138]" 0;
-	setAttr ".phl[139]" 0;
-	setAttr ".phl[140]" 0;
-	setAttr ".phl[141]" 0;
-	setAttr ".phl[142]" 0;
-	setAttr ".phl[143]" 0;
-	setAttr ".phl[144]" 0;
-	setAttr ".phl[145]" 0;
-	setAttr ".phl[146]" 0;
-	setAttr ".phl[147]" 0;
-	setAttr ".phl[148]" 0;
-	setAttr ".phl[149]" 0;
-	setAttr ".phl[150]" 0;
-	setAttr ".phl[151]" 0;
-	setAttr ".phl[152]" 0;
-	setAttr ".phl[153]" 0;
-	setAttr ".phl[154]" 0;
-	setAttr ".phl[155]" 0;
-	setAttr ".phl[156]" 0;
-	setAttr ".phl[157]" 0;
-	setAttr ".phl[158]" 0;
-	setAttr ".phl[159]" 0;
-	setAttr ".phl[160]" 0;
-	setAttr ".phl[161]" 0;
-	setAttr ".phl[162]" 0;
-	setAttr ".phl[163]" 0;
-	setAttr ".phl[164]" 0;
-	setAttr ".phl[165]" 0;
-	setAttr ".phl[166]" 0;
-	setAttr ".phl[167]" 0;
-	setAttr ".phl[168]" 0;
-	setAttr ".phl[169]" 0;
-	setAttr ".phl[170]" 0;
-	setAttr ".phl[171]" 0;
-	setAttr ".phl[172]" 0;
-	setAttr ".phl[173]" 0;
-	setAttr ".phl[174]" 0;
-	setAttr ".phl[175]" 0;
-	setAttr ".phl[176]" 0;
-	setAttr ".phl[177]" 0;
-	setAttr ".phl[178]" 0;
-	setAttr ".phl[179]" 0;
-	setAttr ".phl[180]" 0;
-	setAttr ".phl[181]" 0;
-	setAttr ".phl[182]" 0;
-	setAttr ".phl[183]" 0;
-	setAttr ".phl[184]" 0;
-	setAttr ".phl[185]" 0;
-	setAttr ".phl[186]" 0;
-	setAttr ".phl[187]" 0;
-	setAttr ".phl[188]" 0;
-	setAttr ".phl[189]" 0;
-	setAttr ".phl[190]" 0;
-	setAttr ".phl[191]" 0;
-	setAttr ".phl[192]" 0;
-	setAttr ".phl[193]" 0;
-	setAttr ".phl[194]" 0;
-	setAttr ".phl[195]" 0;
-	setAttr ".phl[196]" 0;
-	setAttr ".phl[197]" 0;
-	setAttr ".phl[198]" 0;
-	setAttr ".phl[199]" 0;
-	setAttr ".phl[200]" 0;
-	setAttr ".phl[201]" 0;
-	setAttr ".phl[202]" 0;
-	setAttr ".phl[203]" 0;
-	setAttr ".phl[204]" 0;
-	setAttr ".phl[205]" 0;
-	setAttr ".phl[206]" 0;
-	setAttr ".phl[207]" 0;
-	setAttr ".phl[208]" 0;
-	setAttr ".phl[209]" 0;
-	setAttr ".phl[210]" 0;
-	setAttr ".phl[211]" 0;
-	setAttr ".phl[212]" 0;
-	setAttr ".phl[213]" 0;
-	setAttr ".phl[214]" 0;
-	setAttr ".phl[215]" 0;
-	setAttr ".phl[216]" 0;
-	setAttr ".phl[217]" 0;
-	setAttr ".phl[218]" 0;
-	setAttr ".phl[219]" 0;
-	setAttr ".phl[220]" 0;
-	setAttr ".phl[221]" 0;
-	setAttr ".phl[222]" 0;
-	setAttr ".phl[223]" 0;
-	setAttr ".phl[224]" 0;
-	setAttr ".phl[225]" 0;
-	setAttr ".phl[226]" 0;
-	setAttr ".phl[227]" 0;
-	setAttr ".phl[228]" 0;
-	setAttr ".phl[229]" 0;
-	setAttr ".phl[230]" 0;
-	setAttr ".phl[231]" 0;
-	setAttr ".phl[232]" 0;
-	setAttr ".phl[233]" 0;
-	setAttr ".phl[234]" 0;
-	setAttr ".phl[235]" 0;
-	setAttr ".phl[236]" 0;
-	setAttr ".phl[237]" 0;
-	setAttr ".phl[238]" 0;
-	setAttr ".phl[239]" 0;
-	setAttr ".phl[240]" 0;
-	setAttr ".phl[241]" 0;
-	setAttr ".phl[242]" 0;
-	setAttr ".phl[243]" 0;
-	setAttr ".phl[244]" 0;
-	setAttr ".phl[245]" 0;
-	setAttr ".phl[246]" 0;
-	setAttr ".phl[247]" 0;
-	setAttr ".phl[248]" 0;
-	setAttr ".phl[249]" 0;
-	setAttr ".phl[250]" 0;
-	setAttr ".phl[251]" 0;
-	setAttr ".phl[252]" 0;
-	setAttr ".phl[253]" 0;
-	setAttr ".phl[254]" 0;
-	setAttr ".phl[255]" 0;
-	setAttr ".phl[256]" 0;
-	setAttr ".phl[257]" 0;
-	setAttr ".phl[258]" 0;
-	setAttr ".phl[259]" 0;
-	setAttr ".phl[260]" 0;
-	setAttr ".phl[261]" 0;
-	setAttr ".phl[262]" 0;
-	setAttr ".phl[263]" 0;
-	setAttr ".phl[264]" 0;
-	setAttr ".phl[265]" 0;
-	setAttr ".phl[266]" 0;
-	setAttr ".phl[267]" 0;
-	setAttr ".phl[268]" 0;
-	setAttr ".phl[269]" 0;
-	setAttr ".phl[270]" 0;
-	setAttr ".phl[271]" 0;
-	setAttr ".phl[272]" 0;
-	setAttr ".phl[273]" 0;
-	setAttr ".phl[274]" 0;
-	setAttr ".phl[275]" 0;
-	setAttr ".phl[276]" 0;
-	setAttr ".phl[277]" 0;
-	setAttr ".phl[278]" 0;
-	setAttr ".phl[279]" 0;
-	setAttr ".phl[280]" 0;
-	setAttr ".phl[281]" 0;
-	setAttr ".phl[282]" 0;
-	setAttr ".phl[283]" 0;
-	setAttr ".phl[284]" 0;
-	setAttr ".phl[285]" 0;
-	setAttr ".phl[286]" 0;
-	setAttr ".phl[287]" 0;
-	setAttr ".phl[288]" 0;
-	setAttr ".phl[289]" 0;
-	setAttr ".phl[290]" 0;
-	setAttr ".phl[291]" 0;
-	setAttr ".phl[292]" 0;
-	setAttr ".ed" -type "dataReferenceEdits" 
-		"DinoRigRN"
-		"DinoRigRN" 0
-		"DinoRigRN" 441
-		2 "|DinoRig:world" "translate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world" "translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1" "translate" " -type \"double3\" 0 0 -5.52641336264616712"
-		
-		2 "|DinoRig:world|DinoRig:spine1" "translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1" "translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1" "translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1" "rotate" " -type \"double3\" 0 0 -5.47107947452468313"
-		
-		2 "|DinoRig:world|DinoRig:spine1" "rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1" "rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1" "rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:hip" "rotate" " -type \"double3\" 0 0 -11.08371557083614611"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:hip" "rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:hip" "rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:hip" "rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2" "rotate" " -type \"double3\" -1.16116558684800664 0 2.45493806465318709"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2" "rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2" "rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2" "rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3" "rotate" 
-		" -type \"double3\" -1.16116558684800664 0 2.45493806465318709"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3" "rotateX" 
-		" -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3" "rotateY" 
-		" -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3" "rotateZ" 
-		" -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4" 
-		"rotate" " -type \"double3\" -0.84944640299367158 0 2.45493806465318709"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck" 
-		"rotate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head" 
-		"rotate" " -type \"double3\" 0 0 -0.95818698123170554"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL" 
-		"rotate" " -type \"double3\" 18.11676330714858096 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL" 
-		"rotate" " -type \"double3\" 14.60018889226394911 -0.0089895207440652616 -0.027390681797741772"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL" 
-		"rotate" " -type \"double3\" -10.31619536672946502 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR" 
-		"rotate" " -type \"double3\" -30.43649382661656588 -12.71393684081961517 -19.49301419898744214"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR" 
-		"rotate" " -type \"double3\" 22.47085017448533861 -2.06652355003578903 -18.10323955628111037"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR" 
-		"rotate" " -type \"double3\" 8.24314616672526945 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail" "translate" " -type \"double3\" -0.0072063418914174275 -1.55726093133169163 53.28835540540366367"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail" "translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail" "translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail" "translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail" "rotate" " -type \"double3\" 0 0 -4.05384767380303845"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail" "rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail" "rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail" "rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1" "translate" 
-		" -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1" "translateX" 
-		" -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1" "translateY" 
-		" -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1" "translateZ" 
-		" -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1" "rotate" " -type \"double3\" 0 0 -2.10075499672455956"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1" "rotateX" " -av"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1" "rotateY" " -av"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1" "rotateZ" " -av"
-		
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2" 
-		"translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2" 
-		"translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2" 
-		"translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2" 
-		"rotate" " -type \"double3\" 0 0 -2.79544557784435721"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3" 
-		"translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3" 
-		"translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3" 
-		"translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3" 
-		"rotate" " -type \"double3\" -4.45477955529214054 0 4.40769983932775222"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4" 
-		"translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4" 
-		"translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4" 
-		"translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4" 
-		"rotate" " -type \"double3\" -4.45477955529214054 0 3.50628317891363395"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5" 
-		"translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5" 
-		"translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5" 
-		"translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5" 
-		"rotate" " -type \"double3\" -4.45477955529214142 0 6.96360693332102265"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6" 
-		"translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6" 
-		"translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6" 
-		"translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6" 
-		"rotate" " -type \"double3\" 10.40872965404462924 0 4.40769983932775222"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7" 
-		"translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7" 
-		"translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7" 
-		"translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7" 
-		"rotate" " -type \"double3\" 10.40872965404462924 0 4.40769983932775222"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8" 
-		"translate" " -type \"double3\" 0 0 0"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8" 
-		"translateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8" 
-		"translateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8" 
-		"translateZ" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8" 
-		"rotate" " -type \"double3\" 10.40872965404462924 0 4.40769983932775222"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8" 
-		"rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8" 
-		"rotateY" " -av"
-		2 "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8" 
-		"rotateZ" " -av"
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7" "translate" " -type \"double3\" 0 0 0"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7" "translateY" " -av"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22" "translate" " -type \"double3\" 0 -65.49280479374201036 0"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22" "translateY" " -av"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22" "translateZ" " -av"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22" "rotate" " -type \"double3\" 0 0 0"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22" "rotateX" " -av"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22" "rotateZ" " -av"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircleShape22" 
-		"controlPoints" " -s 11"
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircleShape22" 
-		"controlPoints[0]" " -type \"double3\" 53.91890155502071025 48.93311327062355076 18.00423830642546008"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircleShape22" 
-		"controlPoints[1]" " -type \"double3\" 43.83484268188476563 42.78660986087511731 18.00423830642546363"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircleShape22" 
-		"controlPoints[2]" " -type \"double3\" 24.03162952902876626 48.93311327062352944 18.00423830642546008"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircleShape22" 
-		"controlPoints[3]" " -type \"double3\" 16.35734129524814762 53.33712545262228133 -1.45501369751197451"
-		
-		2 "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircleShape22" 
-		"controlPoints[7]" " -type \"double3\" 69.18711354617971665 53.33712545262226001 -1.45501369751197451"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8" "translate" " -type \"double3\" 0 62.93578447281089439 0"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8" "translateY" " -av"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8" "translateZ" " -av"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8" "rotate" " -type \"double3\" 0 0 0"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8" "rotateX" " -av"
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircleShape8" 
-		"controlPoints" " -s 11"
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircleShape8" 
-		"controlPoints[0]" " -type \"double3\" 53.91890155502071025 48.93311327062355076 20.32414822992070214"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircleShape8" 
-		"controlPoints[1]" " -type \"double3\" 43.83484268188476563 42.78660986087511731 20.32414822992070214"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircleShape8" 
-		"controlPoints[2]" " -type \"double3\" 24.03162952902876626 48.93311327062352944 20.32414822992069858"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircleShape8" 
-		"controlPoints[3]" " -type \"double3\" 16.35734129524814762 51.83154767647837247 -1.45501369751196896"
-		
-		2 "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircleShape8" 
-		"controlPoints[7]" " -type \"double3\" 69.18711354617971665 51.83154767647835115 -1.45501369751196963"
-		
-		5 4 "DinoRigRN" "|DinoRig:world.translateX" "DinoRigRN.placeHolderList[1]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.translateY" "DinoRigRN.placeHolderList[2]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.translateZ" "DinoRigRN.placeHolderList[3]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.visibility" "DinoRigRN.placeHolderList[4]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.rotateX" "DinoRigRN.placeHolderList[5]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.rotateY" "DinoRigRN.placeHolderList[6]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.rotateZ" "DinoRigRN.placeHolderList[7]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.scaleX" "DinoRigRN.placeHolderList[8]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.scaleY" "DinoRigRN.placeHolderList[9]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world.scaleZ" "DinoRigRN.placeHolderList[10]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.translateX" "DinoRigRN.placeHolderList[11]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.translateY" "DinoRigRN.placeHolderList[12]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.translateZ" "DinoRigRN.placeHolderList[13]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.rotateX" "DinoRigRN.placeHolderList[14]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.rotateY" "DinoRigRN.placeHolderList[15]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.rotateZ" "DinoRigRN.placeHolderList[16]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.visibility" "DinoRigRN.placeHolderList[17]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.scaleX" "DinoRigRN.placeHolderList[18]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.scaleY" "DinoRigRN.placeHolderList[19]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1.scaleZ" "DinoRigRN.placeHolderList[20]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.translateX" 
-		"DinoRigRN.placeHolderList[21]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.translateY" 
-		"DinoRigRN.placeHolderList[22]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.translateZ" 
-		"DinoRigRN.placeHolderList[23]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.rotateX" 
-		"DinoRigRN.placeHolderList[24]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.rotateY" 
-		"DinoRigRN.placeHolderList[25]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.rotateZ" 
-		"DinoRigRN.placeHolderList[26]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.scaleX" "DinoRigRN.placeHolderList[27]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.scaleY" "DinoRigRN.placeHolderList[28]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.scaleZ" "DinoRigRN.placeHolderList[29]" 
-		""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:hip.visibility" 
-		"DinoRigRN.placeHolderList[30]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.translateX" 
-		"DinoRigRN.placeHolderList[31]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.translateY" 
-		"DinoRigRN.placeHolderList[32]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.translateZ" 
-		"DinoRigRN.placeHolderList[33]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.rotateX" 
-		"DinoRigRN.placeHolderList[34]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.rotateY" 
-		"DinoRigRN.placeHolderList[35]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.rotateZ" 
-		"DinoRigRN.placeHolderList[36]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.scaleX" 
-		"DinoRigRN.placeHolderList[37]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.scaleY" 
-		"DinoRigRN.placeHolderList[38]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.scaleZ" 
-		"DinoRigRN.placeHolderList[39]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2.visibility" 
-		"DinoRigRN.placeHolderList[40]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.translateX" 
-		"DinoRigRN.placeHolderList[41]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.translateY" 
-		"DinoRigRN.placeHolderList[42]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.translateZ" 
-		"DinoRigRN.placeHolderList[43]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.rotateX" 
-		"DinoRigRN.placeHolderList[44]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.rotateY" 
-		"DinoRigRN.placeHolderList[45]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.rotateZ" 
-		"DinoRigRN.placeHolderList[46]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.scaleX" 
-		"DinoRigRN.placeHolderList[47]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.scaleY" 
-		"DinoRigRN.placeHolderList[48]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.scaleZ" 
-		"DinoRigRN.placeHolderList[49]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3.visibility" 
-		"DinoRigRN.placeHolderList[50]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.translateX" 
-		"DinoRigRN.placeHolderList[51]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.translateY" 
-		"DinoRigRN.placeHolderList[52]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.translateZ" 
-		"DinoRigRN.placeHolderList[53]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.rotateX" 
-		"DinoRigRN.placeHolderList[54]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.rotateY" 
-		"DinoRigRN.placeHolderList[55]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.rotateZ" 
-		"DinoRigRN.placeHolderList[56]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.scaleX" 
-		"DinoRigRN.placeHolderList[57]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.scaleY" 
-		"DinoRigRN.placeHolderList[58]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.scaleZ" 
-		"DinoRigRN.placeHolderList[59]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4.visibility" 
-		"DinoRigRN.placeHolderList[60]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.translateX" 
-		"DinoRigRN.placeHolderList[61]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.translateY" 
-		"DinoRigRN.placeHolderList[62]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.translateZ" 
-		"DinoRigRN.placeHolderList[63]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.rotateX" 
-		"DinoRigRN.placeHolderList[64]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.rotateY" 
-		"DinoRigRN.placeHolderList[65]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.rotateZ" 
-		"DinoRigRN.placeHolderList[66]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.scaleX" 
-		"DinoRigRN.placeHolderList[67]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.scaleY" 
-		"DinoRigRN.placeHolderList[68]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.scaleZ" 
-		"DinoRigRN.placeHolderList[69]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck.visibility" 
-		"DinoRigRN.placeHolderList[70]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.translateX" 
-		"DinoRigRN.placeHolderList[71]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.translateY" 
-		"DinoRigRN.placeHolderList[72]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.translateZ" 
-		"DinoRigRN.placeHolderList[73]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.rotateX" 
-		"DinoRigRN.placeHolderList[74]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.rotateY" 
-		"DinoRigRN.placeHolderList[75]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.rotateZ" 
-		"DinoRigRN.placeHolderList[76]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.scaleX" 
-		"DinoRigRN.placeHolderList[77]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.scaleY" 
-		"DinoRigRN.placeHolderList[78]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.scaleZ" 
-		"DinoRigRN.placeHolderList[79]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:spine4|DinoRig:neck|DinoRig:head.visibility" 
-		"DinoRigRN.placeHolderList[80]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.translateX" 
-		"DinoRigRN.placeHolderList[81]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.translateY" 
-		"DinoRigRN.placeHolderList[82]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.translateZ" 
-		"DinoRigRN.placeHolderList[83]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.rotateX" 
-		"DinoRigRN.placeHolderList[84]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.rotateY" 
-		"DinoRigRN.placeHolderList[85]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.rotateZ" 
-		"DinoRigRN.placeHolderList[86]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.scaleX" 
-		"DinoRigRN.placeHolderList[87]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.scaleY" 
-		"DinoRigRN.placeHolderList[88]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.scaleZ" 
-		"DinoRigRN.placeHolderList[89]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL.visibility" 
-		"DinoRigRN.placeHolderList[90]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.translateX" 
-		"DinoRigRN.placeHolderList[91]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.translateY" 
-		"DinoRigRN.placeHolderList[92]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.translateZ" 
-		"DinoRigRN.placeHolderList[93]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.rotateX" 
-		"DinoRigRN.placeHolderList[94]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.rotateY" 
-		"DinoRigRN.placeHolderList[95]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.rotateZ" 
-		"DinoRigRN.placeHolderList[96]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.scaleX" 
-		"DinoRigRN.placeHolderList[97]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.scaleY" 
-		"DinoRigRN.placeHolderList[98]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.scaleZ" 
-		"DinoRigRN.placeHolderList[99]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL.visibility" 
-		"DinoRigRN.placeHolderList[100]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.translateX" 
-		"DinoRigRN.placeHolderList[101]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.translateY" 
-		"DinoRigRN.placeHolderList[102]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.translateZ" 
-		"DinoRigRN.placeHolderList[103]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.rotateX" 
-		"DinoRigRN.placeHolderList[104]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.rotateY" 
-		"DinoRigRN.placeHolderList[105]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.rotateZ" 
-		"DinoRigRN.placeHolderList[106]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.scaleX" 
-		"DinoRigRN.placeHolderList[107]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.scaleY" 
-		"DinoRigRN.placeHolderList[108]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.scaleZ" 
-		"DinoRigRN.placeHolderList[109]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group1|DinoRig:shoulderL|DinoRig:armL|DinoRig:WristL.visibility" 
-		"DinoRigRN.placeHolderList[110]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.translateX" 
-		"DinoRigRN.placeHolderList[111]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.translateY" 
-		"DinoRigRN.placeHolderList[112]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.translateZ" 
-		"DinoRigRN.placeHolderList[113]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.rotateX" 
-		"DinoRigRN.placeHolderList[114]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.rotateY" 
-		"DinoRigRN.placeHolderList[115]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.rotateZ" 
-		"DinoRigRN.placeHolderList[116]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.scaleX" 
-		"DinoRigRN.placeHolderList[117]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.scaleY" 
-		"DinoRigRN.placeHolderList[118]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.scaleZ" 
-		"DinoRigRN.placeHolderList[119]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR.visibility" 
-		"DinoRigRN.placeHolderList[120]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.translateX" 
-		"DinoRigRN.placeHolderList[121]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.translateY" 
-		"DinoRigRN.placeHolderList[122]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.translateZ" 
-		"DinoRigRN.placeHolderList[123]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.rotateX" 
-		"DinoRigRN.placeHolderList[124]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.rotateY" 
-		"DinoRigRN.placeHolderList[125]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.rotateZ" 
-		"DinoRigRN.placeHolderList[126]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.scaleX" 
-		"DinoRigRN.placeHolderList[127]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.scaleY" 
-		"DinoRigRN.placeHolderList[128]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.scaleZ" 
-		"DinoRigRN.placeHolderList[129]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR.visibility" 
-		"DinoRigRN.placeHolderList[130]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.translateX" 
-		"DinoRigRN.placeHolderList[131]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.translateY" 
-		"DinoRigRN.placeHolderList[132]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.translateZ" 
-		"DinoRigRN.placeHolderList[133]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.rotateX" 
-		"DinoRigRN.placeHolderList[134]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.rotateY" 
-		"DinoRigRN.placeHolderList[135]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.rotateZ" 
-		"DinoRigRN.placeHolderList[136]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.scaleX" 
-		"DinoRigRN.placeHolderList[137]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.scaleY" 
-		"DinoRigRN.placeHolderList[138]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.scaleZ" 
-		"DinoRigRN.placeHolderList[139]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:spine2|DinoRig:spine3|DinoRig:group2|DinoRig:shoulderR|DinoRig:armR|DinoRig:WristR.visibility" 
-		"DinoRigRN.placeHolderList[140]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.translateX" 
-		"DinoRigRN.placeHolderList[141]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.translateY" 
-		"DinoRigRN.placeHolderList[142]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.translateZ" 
-		"DinoRigRN.placeHolderList[143]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.rotateX" 
-		"DinoRigRN.placeHolderList[144]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.rotateY" 
-		"DinoRigRN.placeHolderList[145]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.rotateZ" 
-		"DinoRigRN.placeHolderList[146]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.scaleX" 
-		"DinoRigRN.placeHolderList[147]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.scaleY" 
-		"DinoRigRN.placeHolderList[148]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.scaleZ" 
-		"DinoRigRN.placeHolderList[149]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail.visibility" 
-		"DinoRigRN.placeHolderList[150]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.translateX" 
-		"DinoRigRN.placeHolderList[151]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.translateY" 
-		"DinoRigRN.placeHolderList[152]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.translateZ" 
-		"DinoRigRN.placeHolderList[153]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.rotateX" 
-		"DinoRigRN.placeHolderList[154]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.rotateY" 
-		"DinoRigRN.placeHolderList[155]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.rotateZ" 
-		"DinoRigRN.placeHolderList[156]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.scaleX" 
-		"DinoRigRN.placeHolderList[157]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.scaleY" 
-		"DinoRigRN.placeHolderList[158]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.scaleZ" 
-		"DinoRigRN.placeHolderList[159]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1.visibility" 
-		"DinoRigRN.placeHolderList[160]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.translateX" 
-		"DinoRigRN.placeHolderList[161]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.translateY" 
-		"DinoRigRN.placeHolderList[162]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.translateZ" 
-		"DinoRigRN.placeHolderList[163]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.rotateX" 
-		"DinoRigRN.placeHolderList[164]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.rotateY" 
-		"DinoRigRN.placeHolderList[165]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.rotateZ" 
-		"DinoRigRN.placeHolderList[166]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.scaleX" 
-		"DinoRigRN.placeHolderList[167]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.scaleY" 
-		"DinoRigRN.placeHolderList[168]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.scaleZ" 
-		"DinoRigRN.placeHolderList[169]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2.visibility" 
-		"DinoRigRN.placeHolderList[170]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.translateX" 
-		"DinoRigRN.placeHolderList[171]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.translateY" 
-		"DinoRigRN.placeHolderList[172]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.translateZ" 
-		"DinoRigRN.placeHolderList[173]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.rotateX" 
-		"DinoRigRN.placeHolderList[174]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.rotateY" 
-		"DinoRigRN.placeHolderList[175]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.rotateZ" 
-		"DinoRigRN.placeHolderList[176]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.scaleX" 
-		"DinoRigRN.placeHolderList[177]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.scaleY" 
-		"DinoRigRN.placeHolderList[178]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.scaleZ" 
-		"DinoRigRN.placeHolderList[179]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3.visibility" 
-		"DinoRigRN.placeHolderList[180]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.translateX" 
-		"DinoRigRN.placeHolderList[181]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.translateY" 
-		"DinoRigRN.placeHolderList[182]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.translateZ" 
-		"DinoRigRN.placeHolderList[183]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.rotateX" 
-		"DinoRigRN.placeHolderList[184]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.rotateY" 
-		"DinoRigRN.placeHolderList[185]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.rotateZ" 
-		"DinoRigRN.placeHolderList[186]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.scaleX" 
-		"DinoRigRN.placeHolderList[187]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.scaleY" 
-		"DinoRigRN.placeHolderList[188]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.scaleZ" 
-		"DinoRigRN.placeHolderList[189]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4.visibility" 
-		"DinoRigRN.placeHolderList[190]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.translateX" 
-		"DinoRigRN.placeHolderList[191]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.translateY" 
-		"DinoRigRN.placeHolderList[192]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.translateZ" 
-		"DinoRigRN.placeHolderList[193]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.rotateX" 
-		"DinoRigRN.placeHolderList[194]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.rotateY" 
-		"DinoRigRN.placeHolderList[195]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.rotateZ" 
-		"DinoRigRN.placeHolderList[196]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.scaleX" 
-		"DinoRigRN.placeHolderList[197]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.scaleY" 
-		"DinoRigRN.placeHolderList[198]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.scaleZ" 
-		"DinoRigRN.placeHolderList[199]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5.visibility" 
-		"DinoRigRN.placeHolderList[200]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.translateX" 
-		"DinoRigRN.placeHolderList[201]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.translateY" 
-		"DinoRigRN.placeHolderList[202]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.translateZ" 
-		"DinoRigRN.placeHolderList[203]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.rotateX" 
-		"DinoRigRN.placeHolderList[204]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.rotateY" 
-		"DinoRigRN.placeHolderList[205]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.rotateZ" 
-		"DinoRigRN.placeHolderList[206]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.scaleX" 
-		"DinoRigRN.placeHolderList[207]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.scaleY" 
-		"DinoRigRN.placeHolderList[208]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.scaleZ" 
-		"DinoRigRN.placeHolderList[209]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6.visibility" 
-		"DinoRigRN.placeHolderList[210]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.translateX" 
-		"DinoRigRN.placeHolderList[211]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.translateY" 
-		"DinoRigRN.placeHolderList[212]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.translateZ" 
-		"DinoRigRN.placeHolderList[213]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.rotateX" 
-		"DinoRigRN.placeHolderList[214]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.rotateY" 
-		"DinoRigRN.placeHolderList[215]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.rotateZ" 
-		"DinoRigRN.placeHolderList[216]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.scaleX" 
-		"DinoRigRN.placeHolderList[217]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.scaleY" 
-		"DinoRigRN.placeHolderList[218]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.scaleZ" 
-		"DinoRigRN.placeHolderList[219]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7.visibility" 
-		"DinoRigRN.placeHolderList[220]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.translateX" 
-		"DinoRigRN.placeHolderList[221]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.translateY" 
-		"DinoRigRN.placeHolderList[222]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.translateZ" 
-		"DinoRigRN.placeHolderList[223]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.rotateX" 
-		"DinoRigRN.placeHolderList[224]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.rotateY" 
-		"DinoRigRN.placeHolderList[225]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.rotateZ" 
-		"DinoRigRN.placeHolderList[226]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.scaleX" 
-		"DinoRigRN.placeHolderList[227]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.scaleY" 
-		"DinoRigRN.placeHolderList[228]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.scaleZ" 
-		"DinoRigRN.placeHolderList[229]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:spine1|DinoRig:tail|DinoRig:tail1|DinoRig:tail2|DinoRig:tail3|DinoRig:tail4|DinoRig:tail5|DinoRig:tail6|DinoRig:tail7|DinoRig:tail8.visibility" 
-		"DinoRigRN.placeHolderList[230]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.translateX" 
-		"DinoRigRN.placeHolderList[231]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.translateY" 
-		"DinoRigRN.placeHolderList[232]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.translateZ" 
-		"DinoRigRN.placeHolderList[233]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.visibility" 
-		"DinoRigRN.placeHolderList[234]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.rotateX" 
-		"DinoRigRN.placeHolderList[235]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.rotateY" 
-		"DinoRigRN.placeHolderList[236]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.rotateZ" 
-		"DinoRigRN.placeHolderList[237]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.scaleX" 
-		"DinoRigRN.placeHolderList[238]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.scaleY" 
-		"DinoRigRN.placeHolderList[239]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle7.scaleZ" 
-		"DinoRigRN.placeHolderList[240]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.toe" 
-		"DinoRigRN.placeHolderList[241]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.translateX" 
-		"DinoRigRN.placeHolderList[242]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.translateY" 
-		"DinoRigRN.placeHolderList[243]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.translateZ" 
-		"DinoRigRN.placeHolderList[244]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.visibility" 
-		"DinoRigRN.placeHolderList[245]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.rotateX" 
-		"DinoRigRN.placeHolderList[246]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.rotateY" 
-		"DinoRigRN.placeHolderList[247]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.rotateZ" 
-		"DinoRigRN.placeHolderList[248]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.scaleX" 
-		"DinoRigRN.placeHolderList[249]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.scaleY" 
-		"DinoRigRN.placeHolderList[250]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22.scaleZ" 
-		"DinoRigRN.placeHolderList[251]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.translateX" 
-		"DinoRigRN.placeHolderList[252]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.translateY" 
-		"DinoRigRN.placeHolderList[253]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.translateZ" 
-		"DinoRigRN.placeHolderList[254]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.visibility" 
-		"DinoRigRN.placeHolderList[255]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.rotateX" 
-		"DinoRigRN.placeHolderList[256]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.rotateY" 
-		"DinoRigRN.placeHolderList[257]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.rotateZ" 
-		"DinoRigRN.placeHolderList[258]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.scaleX" 
-		"DinoRigRN.placeHolderList[259]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.scaleY" 
-		"DinoRigRN.placeHolderList[260]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legLGrp|DinoRig:nurbsCircle22|DinoRig:nurbsCircle25.scaleZ" 
-		"DinoRigRN.placeHolderList[261]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.visibility" 
-		"DinoRigRN.placeHolderList[262]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.translateX" 
-		"DinoRigRN.placeHolderList[263]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.translateY" 
-		"DinoRigRN.placeHolderList[264]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.translateZ" 
-		"DinoRigRN.placeHolderList[265]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.rotateX" 
-		"DinoRigRN.placeHolderList[266]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.rotateY" 
-		"DinoRigRN.placeHolderList[267]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.rotateZ" 
-		"DinoRigRN.placeHolderList[268]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.scaleX" 
-		"DinoRigRN.placeHolderList[269]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.scaleY" 
-		"DinoRigRN.placeHolderList[270]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle7.scaleZ" 
-		"DinoRigRN.placeHolderList[271]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.toe" 
-		"DinoRigRN.placeHolderList[272]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.translateX" 
-		"DinoRigRN.placeHolderList[273]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.translateY" 
-		"DinoRigRN.placeHolderList[274]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.translateZ" 
-		"DinoRigRN.placeHolderList[275]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.visibility" 
-		"DinoRigRN.placeHolderList[276]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.rotateX" 
-		"DinoRigRN.placeHolderList[277]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.rotateY" 
-		"DinoRigRN.placeHolderList[278]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.rotateZ" 
-		"DinoRigRN.placeHolderList[279]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.scaleX" 
-		"DinoRigRN.placeHolderList[280]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.scaleY" 
-		"DinoRigRN.placeHolderList[281]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8.scaleZ" 
-		"DinoRigRN.placeHolderList[282]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.translateX" 
-		"DinoRigRN.placeHolderList[283]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.translateY" 
-		"DinoRigRN.placeHolderList[284]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.translateZ" 
-		"DinoRigRN.placeHolderList[285]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.visibility" 
-		"DinoRigRN.placeHolderList[286]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.rotateX" 
-		"DinoRigRN.placeHolderList[287]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.rotateY" 
-		"DinoRigRN.placeHolderList[288]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.rotateZ" 
-		"DinoRigRN.placeHolderList[289]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.scaleX" 
-		"DinoRigRN.placeHolderList[290]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.scaleY" 
-		"DinoRigRN.placeHolderList[291]" ""
-		5 4 "DinoRigRN" "|DinoRig:world|DinoRig:legRGrp|DinoRig:nurbsCircle8|DinoRig:nurbsCircle24.scaleZ" 
-		"DinoRigRN.placeHolderList[292]" "";
-	setAttr ".ptag" -type "string" "";
-lockNode -l 1 ;
 createNode mentalrayItemsList -s -n "mentalrayItemsList";
 	rename -uid "CA1DE337-4A2F-CA36-9329-B8804CF03DEA";
 createNode mentalrayGlobals -s -n "mentalrayGlobals";
@@ -1287,6 +96,23 @@ createNode mentalrayOptions -s -n "miDefaultOptions";
 	setAttr ".miSamplesMax" 50;
 createNode mentalrayFramebuffer -s -n "miDefaultFramebuffer";
 	rename -uid "7448A3E8-4147-696B-11B6-2F82B94AB039";
+createNode lightLinker -s -n "lightLinker1";
+	rename -uid "5163B800-4A09-01E7-9177-DE9197E3BB66";
+	setAttr -s 6 ".lnk";
+	setAttr -s 6 ".slnk";
+createNode shapeEditorManager -n "shapeEditorManager";
+	rename -uid "74BABF94-45EA-6FEB-404C-9291A23FFD14";
+createNode poseInterpolatorManager -n "poseInterpolatorManager";
+	rename -uid "3DF6833E-4826-EAE0-61C1-36A3D4F38B78";
+createNode displayLayerManager -n "layerManager";
+	rename -uid "567F3C4E-4CEF-7143-6974-809DAF960697";
+createNode displayLayer -n "defaultLayer";
+	rename -uid "5729302D-411F-53B0-41B6-1A902E85973E";
+createNode renderLayerManager -n "renderLayerManager";
+	rename -uid "770B3706-4408-C028-E736-8AA2CEFD925C";
+createNode renderLayer -n "defaultRenderLayer";
+	rename -uid "0823800C-4B00-4117-7C1A-E384FD32585E";
+	setAttr ".g" yes;
 createNode script -n "uiConfigurationScriptNode";
 	rename -uid "66A03C33-4CB3-2BE4-2C89-EB9E2B92422A";
 	setAttr ".b" -type "string" (
@@ -1319,18 +145,18 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"sequenceEditorPanel\" (localizedPanelLabel(\"Camera Sequencer\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Camera Sequencer\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = sequenceEditorNameFromPanel($panelName);\n            clipEditor -e \n                -displayKeys 0\n                -displayTangents 0\n                -displayActiveKeys 0\n                -displayActiveKeyTangents 0\n                -displayInfinities 0\n                -displayValues 0\n                -autoFit 0\n                -autoFitTime 0\n                -snapTime \"none\" \n                -snapValue \"none\" \n                -initialized 0\n                -manageSequencer 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperGraphPanel\" (localizedPanelLabel(\"Hypergraph Hierarchy\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypergraph Hierarchy\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"HyperGraphEd\");\n            hyperGraph -e \n                -graphLayoutStyle \"hierarchicalLayout\" \n                -orientation \"horiz\" \n                -mergeConnections 0\n                -zoom 1\n                -animateTransition 0\n                -showRelationships 1\n                -showShapes 0\n                -showDeformers 0\n                -showExpressions 0\n                -showConstraints 0\n                -showConnectionFromSelected 0\n                -showConnectionToSelected 0\n                -showConstraintLabels 0\n                -showUnderworld 0\n                -showInvisible 0\n                -transitionFrames 1\n                -opaqueContainers 0\n                -freeform 0\n                -imagePosition 0 0 \n                -imageScale 1\n                -imageEnabled 0\n                -graphType \"DAG\" \n"
 		+ "                -heatMapDisplay 0\n                -updateSelection 1\n                -updateNodeAdded 1\n                -useDrawOverrideColor 0\n                -limitGraphTraversal -1\n                -range 0 0 \n                -iconSize \"smallIcons\" \n                -showCachedConnections 0\n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"hyperShadePanel\" (localizedPanelLabel(\"Hypershade\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"visorPanel\" (localizedPanelLabel(\"Visor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Visor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n"
-		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
+		+ "\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif ($nodeEditorPanelVisible || $nodeEditorWorkspaceControlOpen) {\n\t\tif (\"\" == $panelName) {\n\t\t\tif ($useSceneConfig) {\n\t\t\t\t$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
 		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\t}\n\t\t} else {\n\t\t\t$label = `panel -q -label $panelName`;\n\t\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -copyConnectionsOnPaste 0\n"
-		+ "                -connectionStyle \"bezier\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n"
-		+ "\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n"
-		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n"
-		+ "                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n"
-		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
-		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n"
-		+ "        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
+		+ "                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -editorMode \"default\" \n                $editorName;\n\t\t\tif (!$useSceneConfig) {\n\t\t\t\tpanel -e -l $label $panelName;\n\t\t\t}\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"createNodePanel\" (localizedPanelLabel(\"Create Node\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Create Node\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"polyTexturePlacementPanel\" (localizedPanelLabel(\"UV Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"renderWindowPanel\" (localizedPanelLabel(\"Render View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Render View\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"shapePanel\" (localizedPanelLabel(\"Shape Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tshapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"posePanel\" (localizedPanelLabel(\"Pose Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tposePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynRelEdPanel\" (localizedPanelLabel(\"Dynamic Relationships\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"relationshipPanel\" (localizedPanelLabel(\"Relationship Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Relationship Editor\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"referenceEditorPanel\" (localizedPanelLabel(\"Reference Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"componentEditorPanel\" (localizedPanelLabel(\"Component Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"dynPaintScriptedPanelType\" (localizedPanelLabel(\"Paint Effects\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Paint Effects\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"scriptEditorPanel\" (localizedPanelLabel(\"Script Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Script Editor\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"profilerPanel\" (localizedPanelLabel(\"Profiler Tool\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Profiler Tool\")) -mbv $menusOkayInPanels  $panelName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"contentBrowserPanel\" (localizedPanelLabel(\"Content Browser\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Content Browser\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"Stereo\" (localizedPanelLabel(\"Stereo\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Stereo\")) -mbv $menusOkayInPanels  $panelName;\nstring $editorName = ($panelName+\"Editor\");\n            stereoCameraView -e \n                -camera \"persp\" \n                -useInteractiveMode 0\n                -displayLights \"default\" \n                -displayAppearance \"smoothShaded\" \n                -activeOnly 0\n                -ignorePanZoom 0\n                -wireframeOnShaded 0\n                -headsUpDisplay 1\n                -holdOuts 1\n                -selectionHiliteDisplay 1\n                -useDefaultMaterial 0\n                -bufferMode \"double\" \n                -twoSidedLighting 0\n                -backfaceCulling 0\n                -xray 0\n                -jointXray 0\n                -activeComponentsXray 0\n                -displayTextures 0\n"
+		+ "                -smoothWireframe 0\n                -lineWidth 1\n                -textureAnisotropic 0\n                -textureHilight 1\n                -textureSampling 2\n                -textureDisplay \"modulate\" \n                -textureMaxSize 32768\n                -fogging 0\n                -fogSource \"fragment\" \n                -fogMode \"linear\" \n                -fogStart 0\n                -fogEnd 100\n                -fogDensity 0.1\n                -fogColor 0.5 0.5 0.5 1 \n                -depthOfFieldPreview 1\n                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n"
+		+ "                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n"
+		+ "                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n"
+		+ "\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
 		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 710\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1319\\n    -height 710\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
@@ -1378,8 +204,8 @@ createNode animCurveTA -n "tail2_rotateX";
 	rename -uid "9FCFEAFB-465C-73BD-44F1-D2B78BC5CD84";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  0 0 5 -4.5472871491759426 10 -1.7685833394480632
-		 15 2.5540195269999315 24 2.8933682456962577 40 0;
+	setAttr -s 6 ".ktv[0:5]"  0 0 5 -4.5472871491759426 10 -1.7685833394480635
+		 15 2.554019526999932 24 2.8933682456962577 40 0;
 	setAttr -s 6 ".kit[0:5]"  3 9 9 9 9 9;
 	setAttr -s 6 ".kot[0:5]"  3 9 9 9 9 9;
 	setAttr ".pre" 3;
@@ -1398,7 +224,7 @@ createNode animCurveTA -n "tail2_rotateZ";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
 	setAttr -s 8 ".ktv[0:7]"  0 -2.7954455778443572 5 -6.2749339484081181
-		 10 -3.5472361838050879 15 -3.6357703616372672 24 8.5894751953881823 29 9.1779876034484431
+		 10 -3.5472361838050883 15 -3.6357703616372672 24 8.5894751953881823 29 9.1779876034484431
 		 35 2.3116200705583605 40 -2.7954455778443572;
 	setAttr -s 8 ".kit[0:7]"  1 9 9 9 9 9 18 9;
 	setAttr -s 8 ".kot[0:7]"  1 9 9 9 9 9 18 9;
@@ -1880,7 +706,7 @@ createNode animCurveTA -n "tail3_rotateX";
 	setAttr ".tan" 9;
 	setAttr ".wgt" no;
 	setAttr -s 7 ".ktv[0:6]"  0 -4.4547795552921405 5 -3.2021911212632235
-		 10 -3.3409801944873356 15 -4.5282387097570798 24 1.6255779490302329 35 0 40 -4.4547795552921405;
+		 10 -3.3409801944873361 15 -4.5282387097570798 24 1.6255779490302329 35 0 40 -4.4547795552921405;
 	setAttr -s 7 ".kit[0:6]"  3 9 9 9 9 9 3;
 	setAttr -s 7 ".kot[0:6]"  3 9 9 9 9 9 3;
 	setAttr ".pre" 3;
@@ -2363,7 +1189,7 @@ createNode animCurveTA -n "neck_rotateZ";
 	rename -uid "AB80B4A2-49D7-9C03-7C33-599FFCC293AE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  0 0 9 -0.42595315819255364 20 0 29 -0.99971737225478796
+	setAttr -s 5 ".ktv[0:4]"  0 0 9 -0.42595315819255369 20 0 29 -0.99971737225478796
 		 40 0;
 	setAttr ".pre" 3;
 	setAttr ".pst" 3;
@@ -2655,7 +1481,7 @@ createNode animCurveTA -n "armL_rotateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 5 ".ktv[0:4]"  0 14.600188892263949 13 18.634018663650952
-		 20 -5.5899061787902049 25 -8.4880372547466347 40 14.600188892263949;
+		 20 -5.5899061787902049 25 -8.4880372547466365 40 14.600188892263949;
 	setAttr ".pre" 3;
 	setAttr ".pst" 3;
 createNode animCurveTA -n "armL_rotateY";
@@ -3709,6 +2535,1290 @@ createNode animCurveTU -n "world_scaleZ";
 	setAttr -s 3 ".ktv[0:2]"  0 1 20 1 40 1;
 	setAttr ".pre" 3;
 	setAttr ".pst" 3;
+createNode reference -n "DinoRig02RN";
+	rename -uid "10403FBD-424E-B272-BDCF-70A633C91883";
+	setAttr -s 94 ".phl";
+	setAttr ".phl[1]" 0;
+	setAttr ".phl[2]" 0;
+	setAttr ".phl[3]" 0;
+	setAttr ".phl[4]" 0;
+	setAttr ".phl[5]" 0;
+	setAttr ".phl[6]" 0;
+	setAttr ".phl[7]" 0;
+	setAttr ".phl[8]" 0;
+	setAttr ".phl[9]" 0;
+	setAttr ".phl[10]" 0;
+	setAttr ".phl[11]" 0;
+	setAttr ".phl[12]" 0;
+	setAttr ".phl[13]" 0;
+	setAttr ".phl[14]" 0;
+	setAttr ".phl[15]" 0;
+	setAttr ".phl[16]" 0;
+	setAttr ".phl[17]" 0;
+	setAttr ".phl[18]" 0;
+	setAttr ".phl[19]" 0;
+	setAttr ".phl[20]" 0;
+	setAttr ".phl[21]" 0;
+	setAttr ".phl[22]" 0;
+	setAttr ".phl[23]" 0;
+	setAttr ".phl[24]" 0;
+	setAttr ".phl[25]" 0;
+	setAttr ".phl[26]" 0;
+	setAttr ".phl[27]" 0;
+	setAttr ".phl[28]" 0;
+	setAttr ".phl[29]" 0;
+	setAttr ".phl[30]" 0;
+	setAttr ".phl[31]" 0;
+	setAttr ".phl[32]" 0;
+	setAttr ".phl[33]" 0;
+	setAttr ".phl[34]" 0;
+	setAttr ".phl[35]" 0;
+	setAttr ".phl[36]" 0;
+	setAttr ".phl[37]" 0;
+	setAttr ".phl[38]" 0;
+	setAttr ".phl[39]" 0;
+	setAttr ".phl[40]" 0;
+	setAttr ".phl[41]" 0;
+	setAttr ".phl[42]" 0;
+	setAttr ".phl[43]" 0;
+	setAttr ".phl[44]" 0;
+	setAttr ".phl[45]" 0;
+	setAttr ".phl[46]" 0;
+	setAttr ".phl[47]" 0;
+	setAttr ".phl[48]" 0;
+	setAttr ".phl[49]" 0;
+	setAttr ".phl[50]" 0;
+	setAttr ".phl[51]" 0;
+	setAttr ".phl[52]" 0;
+	setAttr ".phl[53]" 0;
+	setAttr ".phl[54]" 0;
+	setAttr ".phl[55]" 0;
+	setAttr ".phl[56]" 0;
+	setAttr ".phl[57]" 0;
+	setAttr ".phl[58]" 0;
+	setAttr ".phl[59]" 0;
+	setAttr ".phl[60]" 0;
+	setAttr ".phl[61]" 0;
+	setAttr ".phl[62]" 0;
+	setAttr ".phl[63]" 0;
+	setAttr ".phl[64]" 0;
+	setAttr ".phl[65]" 0;
+	setAttr ".phl[66]" 0;
+	setAttr ".phl[67]" 0;
+	setAttr ".phl[68]" 0;
+	setAttr ".phl[69]" 0;
+	setAttr ".phl[70]" 0;
+	setAttr ".phl[71]" 0;
+	setAttr ".phl[72]" 0;
+	setAttr ".phl[73]" 0;
+	setAttr ".phl[74]" 0;
+	setAttr ".phl[75]" 0;
+	setAttr ".phl[76]" 0;
+	setAttr ".phl[77]" 0;
+	setAttr ".phl[78]" 0;
+	setAttr ".phl[79]" 0;
+	setAttr ".phl[80]" 0;
+	setAttr ".phl[81]" 0;
+	setAttr ".phl[82]" 0;
+	setAttr ".phl[83]" 0;
+	setAttr ".phl[84]" 0;
+	setAttr ".phl[85]" 0;
+	setAttr ".phl[86]" 0;
+	setAttr ".phl[87]" 0;
+	setAttr ".phl[88]" 0;
+	setAttr ".phl[89]" 0;
+	setAttr ".phl[90]" 0;
+	setAttr ".phl[91]" 0;
+	setAttr ".phl[92]" 0;
+	setAttr ".phl[93]" 0;
+	setAttr ".phl[94]" 0;
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"DinoRig02RN"
+		"DinoRig02RN" 0
+		"DinoRig02RN" 128
+		2 "|DinoRig02:world" "translate" " -type \"double3\" 0 0 0"
+		2 "|DinoRig02:world|DinoRig02:spine1" "translate" " -type \"double3\" -15.9 0 -9.58578865263774027"
+		
+		2 "|DinoRig02:world|DinoRig02:spine1" "translateX" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1" "translateZ" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1" "rotate" " -type \"double3\" 0 0 -5.47107947452468313"
+		
+		2 "|DinoRig02:world|DinoRig02:spine1" "rotateX" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1" "rotateY" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1" "rotateZ" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2" "rotate" " -type \"double3\" -1.15913801465537647 -0.068594642671836223 -0.93125930907925958"
+		
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2" "rotateX" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2" "rotateY" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2" "rotateZ" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3" "rotate" 
+		" -type \"double3\" -1.15913801465537647 -0.068594642671836223 -0.93125930907925958"
+		
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3" "rotateX" 
+		" -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3" "rotateY" 
+		" -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3" "rotateZ" 
+		" -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4" 
+		"rotate" " -type \"double3\" -0.84796295171210223 -0.050181749089796647 -0.9315818488562243"
+		
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4" 
+		"rotateX" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4" 
+		"rotateY" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4" 
+		"rotateZ" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck" 
+		"rotate" " -type \"double3\" 0 0 4.44612723049652114"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck" 
+		"rotateX" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck" 
+		"rotateY" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck" 
+		"rotateZ" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck|DinoRig02:head" 
+		"rotate" " -type \"double3\" 0 0 4.44612723049652114"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck|DinoRig02:head" 
+		"rotateX" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck|DinoRig02:head" 
+		"rotateY" " -av"
+		2 "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck|DinoRig02:head" 
+		"rotateZ" " -av"
+		2 "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22" "translate" 
+		" -type \"double3\" 0 -65.49280479374201036 0"
+		2 "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22" "translateY" 
+		" -av"
+		2 "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22" "translateZ" 
+		" -av"
+		2 "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8" "translate" 
+		" -type \"double3\" 0 62.93578447281089439 0"
+		2 "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8" "translateY" 
+		" -av"
+		2 "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8" "translateZ" 
+		" -av"
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1.translateX" "DinoRig02RN.placeHolderList[1]" 
+		""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1.translateY" "DinoRig02RN.placeHolderList[2]" 
+		""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1.translateZ" "DinoRig02RN.placeHolderList[3]" 
+		""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1.rotateX" "DinoRig02RN.placeHolderList[4]" 
+		""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1.rotateY" "DinoRig02RN.placeHolderList[5]" 
+		""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1.rotateZ" "DinoRig02RN.placeHolderList[6]" 
+		""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail.rotateX" 
+		"DinoRig02RN.placeHolderList[7]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail.rotateY" 
+		"DinoRig02RN.placeHolderList[8]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail.rotateZ" 
+		"DinoRig02RN.placeHolderList[9]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1.rotateX" 
+		"DinoRig02RN.placeHolderList[10]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1.rotateY" 
+		"DinoRig02RN.placeHolderList[11]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1.rotateZ" 
+		"DinoRig02RN.placeHolderList[12]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2.rotateX" 
+		"DinoRig02RN.placeHolderList[13]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2.rotateY" 
+		"DinoRig02RN.placeHolderList[14]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2.rotateZ" 
+		"DinoRig02RN.placeHolderList[15]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3.rotateX" 
+		"DinoRig02RN.placeHolderList[16]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3.rotateY" 
+		"DinoRig02RN.placeHolderList[17]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3.rotateZ" 
+		"DinoRig02RN.placeHolderList[18]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4.rotateX" 
+		"DinoRig02RN.placeHolderList[19]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4.rotateY" 
+		"DinoRig02RN.placeHolderList[20]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4.rotateZ" 
+		"DinoRig02RN.placeHolderList[21]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5.rotateX" 
+		"DinoRig02RN.placeHolderList[22]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5.rotateY" 
+		"DinoRig02RN.placeHolderList[23]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5.rotateZ" 
+		"DinoRig02RN.placeHolderList[24]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6.rotateX" 
+		"DinoRig02RN.placeHolderList[25]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6.rotateY" 
+		"DinoRig02RN.placeHolderList[26]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6.rotateZ" 
+		"DinoRig02RN.placeHolderList[27]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6|DinoRig02:tail7.rotateX" 
+		"DinoRig02RN.placeHolderList[28]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6|DinoRig02:tail7.rotateY" 
+		"DinoRig02RN.placeHolderList[29]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6|DinoRig02:tail7.rotateZ" 
+		"DinoRig02RN.placeHolderList[30]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6|DinoRig02:tail7|DinoRig02:tail8.rotateX" 
+		"DinoRig02RN.placeHolderList[31]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6|DinoRig02:tail7|DinoRig02:tail8.rotateY" 
+		"DinoRig02RN.placeHolderList[32]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:tail|DinoRig02:tail1|DinoRig02:tail2|DinoRig02:tail3|DinoRig02:tail4|DinoRig02:tail5|DinoRig02:tail6|DinoRig02:tail7|DinoRig02:tail8.rotateZ" 
+		"DinoRig02RN.placeHolderList[33]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2.rotateX" 
+		"DinoRig02RN.placeHolderList[34]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2.rotateY" 
+		"DinoRig02RN.placeHolderList[35]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2.rotateZ" 
+		"DinoRig02RN.placeHolderList[36]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3.rotateX" 
+		"DinoRig02RN.placeHolderList[37]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3.rotateY" 
+		"DinoRig02RN.placeHolderList[38]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3.rotateZ" 
+		"DinoRig02RN.placeHolderList[39]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4.rotateX" 
+		"DinoRig02RN.placeHolderList[40]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4.rotateY" 
+		"DinoRig02RN.placeHolderList[41]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4.rotateZ" 
+		"DinoRig02RN.placeHolderList[42]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck.rotateX" 
+		"DinoRig02RN.placeHolderList[43]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck.rotateY" 
+		"DinoRig02RN.placeHolderList[44]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck.rotateZ" 
+		"DinoRig02RN.placeHolderList[45]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck|DinoRig02:head.rotateX" 
+		"DinoRig02RN.placeHolderList[46]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck|DinoRig02:head.rotateY" 
+		"DinoRig02RN.placeHolderList[47]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:spine4|DinoRig02:neck|DinoRig02:head.rotateZ" 
+		"DinoRig02RN.placeHolderList[48]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL.rotateX" 
+		"DinoRig02RN.placeHolderList[49]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL.rotateY" 
+		"DinoRig02RN.placeHolderList[50]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL.rotateZ" 
+		"DinoRig02RN.placeHolderList[51]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL|DinoRig02:armL.rotateX" 
+		"DinoRig02RN.placeHolderList[52]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL|DinoRig02:armL.rotateY" 
+		"DinoRig02RN.placeHolderList[53]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL|DinoRig02:armL.rotateZ" 
+		"DinoRig02RN.placeHolderList[54]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL|DinoRig02:armL|DinoRig02:WristL.rotateX" 
+		"DinoRig02RN.placeHolderList[55]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL|DinoRig02:armL|DinoRig02:WristL.rotateY" 
+		"DinoRig02RN.placeHolderList[56]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group1|DinoRig02:shoulderL|DinoRig02:armL|DinoRig02:WristL.rotateZ" 
+		"DinoRig02RN.placeHolderList[57]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR.rotateX" 
+		"DinoRig02RN.placeHolderList[58]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR.rotateY" 
+		"DinoRig02RN.placeHolderList[59]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR.rotateZ" 
+		"DinoRig02RN.placeHolderList[60]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR|DinoRig02:armR.rotateX" 
+		"DinoRig02RN.placeHolderList[61]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR|DinoRig02:armR.rotateY" 
+		"DinoRig02RN.placeHolderList[62]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR|DinoRig02:armR.rotateZ" 
+		"DinoRig02RN.placeHolderList[63]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR|DinoRig02:armR|DinoRig02:WristR.rotateX" 
+		"DinoRig02RN.placeHolderList[64]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR|DinoRig02:armR|DinoRig02:WristR.rotateY" 
+		"DinoRig02RN.placeHolderList[65]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:spine2|DinoRig02:spine3|DinoRig02:group2|DinoRig02:shoulderR|DinoRig02:armR|DinoRig02:WristR.rotateZ" 
+		"DinoRig02RN.placeHolderList[66]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:hip.translateX" 
+		"DinoRig02RN.placeHolderList[67]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:hip.translateY" 
+		"DinoRig02RN.placeHolderList[68]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:hip.translateZ" 
+		"DinoRig02RN.placeHolderList[69]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:hip.rotateX" 
+		"DinoRig02RN.placeHolderList[70]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:hip.rotateY" 
+		"DinoRig02RN.placeHolderList[71]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:spine1|DinoRig02:hip.rotateZ" 
+		"DinoRig02RN.placeHolderList[72]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.toe" 
+		"DinoRig02RN.placeHolderList[73]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.translateX" 
+		"DinoRig02RN.placeHolderList[74]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.translateY" 
+		"DinoRig02RN.placeHolderList[75]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.translateZ" 
+		"DinoRig02RN.placeHolderList[76]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.rotateX" 
+		"DinoRig02RN.placeHolderList[77]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.rotateY" 
+		"DinoRig02RN.placeHolderList[78]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.rotateZ" 
+		"DinoRig02RN.placeHolderList[79]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.visibility" 
+		"DinoRig02RN.placeHolderList[80]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.scaleX" 
+		"DinoRig02RN.placeHolderList[81]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.scaleY" 
+		"DinoRig02RN.placeHolderList[82]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legLGrp|DinoRig02:nurbsCircle22.scaleZ" 
+		"DinoRig02RN.placeHolderList[83]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.toe" 
+		"DinoRig02RN.placeHolderList[84]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.translateX" 
+		"DinoRig02RN.placeHolderList[85]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.translateY" 
+		"DinoRig02RN.placeHolderList[86]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.translateZ" 
+		"DinoRig02RN.placeHolderList[87]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.rotateX" 
+		"DinoRig02RN.placeHolderList[88]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.rotateY" 
+		"DinoRig02RN.placeHolderList[89]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.rotateZ" 
+		"DinoRig02RN.placeHolderList[90]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.visibility" 
+		"DinoRig02RN.placeHolderList[91]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.scaleX" 
+		"DinoRig02RN.placeHolderList[92]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.scaleY" 
+		"DinoRig02RN.placeHolderList[93]" ""
+		5 4 "DinoRig02RN" "|DinoRig02:world|DinoRig02:legRGrp|DinoRig02:nurbsCircle8.scaleZ" 
+		"DinoRig02RN.placeHolderList[94]" "";
+	setAttr ".ptag" -type "string" "";
+lockNode -l 1 ;
+createNode animCurveTL -n "spine1_translateX1";
+	rename -uid "3577C434-4422-9753-0D2F-C69D10EE79BD";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 9 ".ktv[0:8]"  0 -15.9 4 0.086142204952095014 10 22.147843326641436
+		 15 21 20 15.9 24 -0.09564510007221827 30 -27.095993894515956 35 -25.962691245236716
+		 40 -15.9;
+	setAttr -s 9 ".kit[0:8]"  9 18 18 18 1 18 18 18 
+		1;
+	setAttr -s 9 ".kot[0:8]"  9 18 18 18 1 18 18 18 
+		1;
+	setAttr -s 9 ".kix[4:8]"  0.017179389698967838 0.0096903703179155622 
+		1 0.061161452827792576 0.0171778222081009;
+	setAttr -s 9 ".kiy[4:8]"  -0.9998524233953584 -0.99995304725927081 
+		0 0.99812788593846702 0.99985245032664039;
+	setAttr -s 9 ".kox[4:8]"  0.017179395404109715 0.0096903703179155639 
+		1 0.06116145282779259 0.017177821671644989;
+	setAttr -s 9 ".koy[4:8]"  -0.99985242329733304 -0.99995304725927092 
+		0 0.99812788593846724 0.99985245033585679;
+createNode animCurveTL -n "spine1_translateY1";
+	rename -uid "30119C6E-4E38-E746-434C-51ACDAB4E3B7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 0 4 0 10 0 20 0 24 0 30 0 40 0;
+createNode animCurveTL -n "spine1_translateZ1";
+	rename -uid "6346DBC6-4941-32F0-D6B4-DB8132408CD7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 9 ".ktv[0:8]"  0 -9.5857886526377403 4 -15.111808699539917
+		 10 14.109271358143484 15 10 20 -9.5857886526377403 24 -15.498524810323257 30 14.236176645804502
+		 35 10 40 -9.5857886526377403;
+	setAttr -s 9 ".kit[0:8]"  1 18 18 9 9 18 18 9 
+		1;
+	setAttr -s 9 ".kot[0:8]"  1 18 18 9 9 18 18 9 
+		1;
+	setAttr -s 9 ".kix[0:8]"  0.015657323623988556 1 1 0.01758181922404899 
+		0.014705142958919334 1 1 0.017488185404131051 0.020012014639265781;
+	setAttr -s 9 ".kiy[0:8]"  -0.99987741659512119 0 0 -0.99984542787011477 
+		-0.99989187353961317 0 0 -0.9998470699918417 -0.99979973958292168;
+	setAttr -s 9 ".kox[0:8]"  0.015657325019875563 1 1 0.01758181922404899 
+		0.014705142958919334 1 1 0.017488185404131051 0.020012020488575932;
+	setAttr -s 9 ".koy[0:8]"  -0.99987741657326279 0 0 -0.99984542787011477 
+		-0.99989187353961317 0 0 -0.9998470699918417 -0.99979973946584166;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine1_rotateX1";
+	rename -uid "87C18D8E-4B0B-0E2A-9C5F-F7A042C936B2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 9 ".ktv[0:8]"  0 0 4 1.3768946866118887 10 2.1437055595624108
+		 15 0.2813474294583565 20 0 24 1.3536232271198541 30 2.1564885795949604 35 0.35146789894463232
+		 40 0;
+	setAttr -s 9 ".kit[1:8]"  1 18 18 18 1 18 18 18;
+	setAttr -s 9 ".kot[1:8]"  1 18 18 18 1 18 18 18;
+	setAttr -s 9 ".kix[1:8]"  0.99334886975642012 1 0.99750936114342625 
+		1 0.99005264370484825 1 0.99612127883118684 1;
+	setAttr -s 9 ".kiy[1:8]"  0.11514348854209146 0 -0.070534207525381393 
+		0 0.14069741537441577 0 -0.087990896459354942 0;
+	setAttr -s 9 ".kox[1:8]"  0.99334886990712412 1 0.99750936114342625 
+		1 0.99005264806236437 1 0.99612127883118684 1;
+	setAttr -s 9 ".koy[1:8]"  0.11514348724195979 0 -0.070534207525381393 
+		0 0.14069738471165749 0 -0.087990896459354942 0;
+createNode animCurveTA -n "spine1_rotateY1";
+	rename -uid "ACBA34F2-4D8D-3E8F-B557-F2B10A92BB23";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 4 2.8917552130100099 10 7.5533448646622787
+		 20 0 30 -5 40 0;
+	setAttr -s 6 ".kit[0:5]"  1 18 18 1 18 1;
+	setAttr -s 6 ".kot[0:5]"  1 18 18 1 18 1;
+	setAttr -s 6 ".kix[0:5]"  0.94985053696865518 0.95341707871450077 
+		1 0.96010590465952661 1 0.97068269804046559;
+	setAttr -s 6 ".kiy[0:5]"  0.31270426511379307 0.30165522374974257 
+		0 -0.27963664251652021 0 0.24036451427962938;
+	setAttr -s 6 ".kox[0:5]"  0.94985051803065979 0.95341707871450077 
+		1 0.96010591175795401 1 0.9706827052536684;
+	setAttr -s 6 ".koy[0:5]"  0.31270432263863457 0.30165522374974263 
+		0 -0.27963661814474133 0 0.24036448514999023;
+createNode animCurveTA -n "spine1_rotateZ1";
+	rename -uid "BF7B550D-4CE8-258B-AAC9-37A21CB1BD54";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -5.4710794745246831 4 -4.3638562865746149
+		 10 -0.0020759073068930441 20 5.1752973326875154 40 -5.4710794745246831;
+createNode animCurveTL -n "hip_translateX1";
+	rename -uid "C8046DEA-40DE-CAF1-3C37-40B564651F7D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 0 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTL -n "hip_translateY1";
+	rename -uid "52580076-406C-2857-A297-0783F6D082E9";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 0 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTL -n "hip_translateZ1";
+	rename -uid "0CCDFBCE-48D8-E59B-93AC-A6A1F32C51D4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 0 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "hip_rotateX1";
+	rename -uid "40C5F735-45FC-CD2F-7769-D5BEAF8D2C7E";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 0 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "hip_rotateY1";
+	rename -uid "4B6EC986-4F3B-164D-CB84-7BA3E33743E6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 0 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "hip_rotateZ1";
+	rename -uid "259C13BC-48DA-84C4-69CD-C7B5CAD21141";
+	setAttr ".tan" 1;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -11.083715570836146 16 27.563701222120031
+		 20 16.372838250184653 36 -18.73465187997985 40 -11.083715570836146;
+	setAttr -s 5 ".kit[1:4]"  18 1 18 1;
+	setAttr -s 5 ".kot[1:4]"  18 1 18 1;
+	setAttr -s 5 ".kix[0:4]"  0.62161310883326582 1 0.58726800667045043 
+		1 0.66057975153133797;
+	setAttr -s 5 ".kiy[0:4]"  0.7833244174201659 0 -0.80939254280065853 
+		0 0.75075588034113727;
+	setAttr -s 5 ".kox[0:4]"  0.62161317147698347 1 0.58726804700138602 
+		1 0.6605797691387526;
+	setAttr -s 5 ".koy[0:4]"  0.78332436770875857 0 -0.80939251353788655 
+		0 0.75075586484861523;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle22_toe1";
+	rename -uid "B58BFEF0-4FAD-1A88-3191-D9A9994E31E1";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 20 0 23 0 31 0 36 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTL -n "nurbsCircle22_translateX1";
+	rename -uid "1758E2EA-4BA1-81E7-6AB3-01B32A1F45B8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 20 0 23 0 31 0 36 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTL -n "nurbsCircle22_translateY1";
+	rename -uid "9098BEC5-419A-1E51-7D8D-AD86DF8DB7FE";
+	setAttr ".tan" 1;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -65.49280479374201 20 65.003500850375787
+		 23 75.067450938986752 31 -11.932945075615436 36 -67.378201480742916 40 -65.49280479374201;
+	setAttr -s 6 ".kit[0:5]"  9 1 18 1 18 1;
+	setAttr -s 6 ".kot[0:5]"  9 1 18 1 18 1;
+	setAttr -s 6 ".kix[1:5]"  0.0063240087380612075 1 0.0025206376081438244 
+		1 0.0063877080114447815;
+	setAttr -s 6 ".kiy[1:5]"  0.99998000325680558 0 -0.99999682318797822 
+		0 0.99997959838506723;
+	setAttr -s 6 ".kox[1:5]"  0.0063240090555831 1 0.0025206379972871249 
+		1 0.0063877080404007355;
+	setAttr -s 6 ".koy[1:5]"  0.99998000325479752 0 -0.99999682318699723 
+		0 0.99997959838488226;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTL -n "nurbsCircle22_translateZ1";
+	rename -uid "6145B456-46CD-4ED3-5D28-17BB1F3DCE7C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 20 0 23 0 31 27.696041091280904 36 10.474631730494444
+		 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "nurbsCircle22_rotateX1";
+	rename -uid "3EEDF0CA-4CE5-21A7-374E-DF82628CAF44";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 20 0 23 0 31 17.352758588733113 36 -20.966184520581773
+		 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "nurbsCircle22_rotateY1";
+	rename -uid "DDF8B334-4025-6D2F-F189-988F0FEB72FC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 20 0 23 0 31 0 36 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "nurbsCircle22_rotateZ1";
+	rename -uid "A3777AF2-432F-63B9-EB5E-B3869B8DC8C0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  20 10 40 10 43 10 51 10 56 10 60 10;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle22_visibility1";
+	rename -uid "430C73D6-45C8-785C-C10A-84902CDD1B7A";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1 20 1 23 1 31 1 36 1 40 1;
+	setAttr -s 6 ".kot[0:5]"  5 5 5 5 5 5;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle22_scaleX1";
+	rename -uid "DF84D212-4057-432F-6BCA-B9ADC9F6CE81";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1 20 1 23 1 31 1 36 1 40 1;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle22_scaleY1";
+	rename -uid "6ECA5BE9-4961-6EAD-4A13-B3B1509FC9F8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1 20 1 23 1 31 1 36 1 40 1;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle22_scaleZ1";
+	rename -uid "055F91E0-48F6-09FC-2569-06884DB03E56";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1 20 1 23 1 31 1 36 1 40 1;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle8_toe1";
+	rename -uid "27250E3A-4162-3A22-D831-5BA2D6729B9D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 2 0 10 0 15 0 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTL -n "nurbsCircle8_translateX1";
+	rename -uid "ECEFEBBC-4F57-1E97-8DBB-C6927C2094E3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 2 0 10 0 15 0 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTL -n "nurbsCircle8_translateY1";
+	rename -uid "50955E51-4B67-C447-875C-CAA5AF351CEB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 62.935784472810894 2 75.865742249481769
+		 10 -7.0790085165762093 15 -75.294071682346541 20 -69.171586673086182 40 62.935784472810894;
+	setAttr -s 6 ".kit[0:5]"  9 18 18 18 1 9;
+	setAttr -s 6 ".kot[0:5]"  9 18 18 18 1 9;
+	setAttr -s 6 ".kix[4:5]"  0.0060145389188305176 0.0063078747769471305;
+	setAttr -s 6 ".kiy[4:5]"  0.99998191249721802 0.99998010515999669;
+	setAttr -s 6 ".kox[4:5]"  0.0060145384047279593 0.0063078747769471305;
+	setAttr -s 6 ".koy[4:5]"  0.9999819125003101 0.99998010515999669;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTL -n "nurbsCircle8_translateZ1";
+	rename -uid "8C04DAF1-4E46-E26F-EEFF-FB9327CF4E1B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 2 0 10 21.365517413273807 15 16.603680451738906
+		 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "nurbsCircle8_rotateX1";
+	rename -uid "2A3008CF-4651-8C42-19DF-3EB16760CEAF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 2 0 10 18.02011585770094 15 -29.159118103659715
+		 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "nurbsCircle8_rotateY1";
+	rename -uid "983B396E-4303-8032-DE25-0BA7C3C370FF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 2 0 10 0 15 0 20 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "nurbsCircle8_rotateZ1";
+	rename -uid "5C7F3C3D-448F-15B8-F70F-8EAE9423B09F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 10 2 10 10 10 15 10 20 10 40 10;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle8_visibility1";
+	rename -uid "7F67CDE9-4821-DC47-0FB3-658DEAAA5028";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1 2 1 10 1 15 1 20 1 40 1;
+	setAttr -s 6 ".kot[0:5]"  5 5 5 5 5 5;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle8_scaleX1";
+	rename -uid "F01349EC-45ED-7353-8000-8596A68886A7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1 2 1 10 1 15 1 20 1 40 1;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle8_scaleY1";
+	rename -uid "564826EB-42E0-E3B2-640C-74AF19BEACEA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1 2 1 10 1 15 1 20 1 40 1;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTU -n "nurbsCircle8_scaleZ1";
+	rename -uid "3522E808-489D-5114-C841-03B8F2CAB905";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 1 2 1 10 1 15 1 20 1 40 1;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "shoulderL_rotateX1";
+	rename -uid "0F70E714-4444-EEE5-A495-1DAE9E141091";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 9.2398811431661887 20 -12.251828683360907
+		 40 9.2398811431661887;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "shoulderL_rotateY1";
+	rename -uid "063F6A0B-465A-AA74-7B89-39B29D1A7677";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -0.18083598685833549 20 -6.7392778014767556
+		 40 -0.18083598685833549;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "shoulderL_rotateZ1";
+	rename -uid "503A6681-4DE9-F112-9A5E-7594AC974E12";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -0.18083598685833549 20 -10.430549559635844
+		 40 -0.18083598685833549;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "armL_rotateX1";
+	rename -uid "261483C0-423A-98C1-23FD-368B38D3FFD8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 7.4112624066662418 13 9.5088539345428291
+		 20 -3.0875872643014612 25 -4.5946154573904909 40 7.4112624066662418;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "armL_rotateY1";
+	rename -uid "A4C80705-4714-4A0A-25EB-47BFD5612917";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -0.18551053743013088 20 -1.2704024138228711
+		 40 -0.18551053743013088;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "armL_rotateZ1";
+	rename -uid "4D104205-4A5C-0908-3548-DC92354334D6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -0.19507914139132704 20 -9.653877425819843
+		 40 -0.19507914139132704;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "WristL_rotateX1";
+	rename -uid "11151B68-4E3A-9819-6BF7-F3882DFA228F";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 -5.5452576968113947 13 7.5832130166242377
+		 25 6.8627716350643793 32 -6.7019334332531022 40 -5.5452576968113947;
+	setAttr -s 5 ".kit[0:4]"  1 9 9 9 1;
+	setAttr -s 5 ".kot[0:4]"  1 9 9 9 1;
+	setAttr -s 5 ".kix[0:4]"  0.97675413342990391 0.97906533383544259 
+		0.9538166528662626 0.94488564202704395 0.97142281214907122;
+	setAttr -s 5 ".kiy[0:4]"  0.21436268991500737 0.20354624064741003 
+		-0.30038940180206009 -0.32740055511733762 0.2373556825449735;
+	setAttr -s 5 ".kox[0:4]"  0.97675413763492969 0.97906533383544259 
+		0.9538166528662626 0.94488564202704395 0.97142280165232309;
+	setAttr -s 5 ".koy[0:4]"  0.21436267075459911 0.20354624064741003 
+		-0.30038940180206009 -0.32740055511733762 0.23735572550488734;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "WristL_rotateY1";
+	rename -uid "4E77068F-413B-5EB3-B230-B8A9479105A8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  0 -0.18083598685833549 40 -0.18083598685833549;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "WristL_rotateZ1";
+	rename -uid "4375C12F-453C-B582-3A92-D6A0BBE76022";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 2 ".ktv[0:1]"  0 -0.18083598685833549 40 -0.18083598685833549;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "shoulderR_rotateX1";
+	rename -uid "63D0C47D-45E5-DBBF-E543-B98C8BFB5E57";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -16.007813129163221 20 -0.18083598685833549
+		 40 -16.007813129163221;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "shoulderR_rotateY1";
+	rename -uid "CA264301-4DE2-B302-6CF0-5F8CC0815182";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -6.7920832911300408 20 -0.18083598685833549
+		 40 -6.7920832911300408;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "shoulderR_rotateZ1";
+	rename -uid "9BD85182-4B26-7815-47FC-04B64C8598E3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -10.317203595952302 20 -0.18083598685833549
+		 40 -10.317203595952302;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "armR_rotateX1";
+	rename -uid "0DA3707A-455E-8E50-F202-A3A781BD8D81";
+	setAttr ".tan" 1;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 11.504006364648694 9 -3.1809288649002849
+		 20 -0.18083598685833549 29 12.785651842494424 40 11.504006364648694;
+	setAttr -s 5 ".kit[1:4]"  18 18 1 1;
+	setAttr -s 5 ".kot[1:4]"  18 18 1 1;
+	setAttr -s 5 ".kix[0:4]"  0.97506232097376666 1 0.9483784429383042 
+		0.99361949472367295 0.98369517931258499;
+	setAttr -s 5 ".kiy[0:4]"  -0.22193122857599629 0 0.31714086613036435 
+		0.11278430611159004 -0.1798438050008431;
+	setAttr -s 5 ".kox[0:4]"  0.97506232446785113 1 0.9483784429383042 
+		0.99361949291619878 0.98369517128956629;
+	setAttr -s 5 ".koy[0:4]"  -0.22193121322461873 0 0.31714086613036435 
+		0.11278432203527185 -0.17984384888449947;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "armR_rotateY1";
+	rename -uid "910D84C5-43E2-8590-4A45-09898B933B2B";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -1.2554282565103128 20 -0.18083598685833549
+		 40 -1.2554282565103128;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "armR_rotateZ1";
+	rename -uid "B65B5EEF-4447-946E-3401-1EA04A98D0C4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 -9.5945207656363927 20 -0.18083598685833549
+		 40 -9.5945207656363927;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "WristR_rotateX1";
+	rename -uid "B2B24258-4556-84A9-8F76-7A8865D1DF93";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 5 ".ktv[0:4]"  0 4.1056001157028534 10 -0.46584744230223479
+		 20 -5.1142053788601389 34 1.1953962663904696 40 4.1056001157028534;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "WristR_rotateY1";
+	rename -uid "E6635D46-4B3C-20EF-7F74-C4B30AF53864";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  0 -0.18083598685833549 10 -0.18083598685833549
+		 20 -0.18083598685833549 40 -0.18083598685833549;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "WristR_rotateZ1";
+	rename -uid "BB8E3C0C-48F2-8E92-4E29-0A84F55F2958";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 4 ".ktv[0:3]"  0 -0.18083598685833549 10 -0.18083598685833549
+		 20 -0.18083598685833549 40 -0.18083598685833549;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine2_rotateX1";
+	rename -uid "C61CB512-4DE9-53EC-DA0D-17984AAA4DE6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -1.1591380146553765 6 -0.10494702675949262
+		 13 1.225900149843099 20 -1.1721771533331302 26 -0.18253561228962759 33 1.0609494985119483
+		 40 -1.1591380146553765;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine2_rotateY1";
+	rename -uid "CC375A9C-4B1B-9A01-B59E-A1BAC40D4038";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -0.068594642671836223 6 -0.0037557755801907438
+		 13 -0.018569764430479935 20 0.045549195822219078 26 0.068612473530014803 33 0.069918131569798744
+		 40 -0.068594642671836223;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine2_rotateZ1";
+	rename -uid "6690038B-443F-AF69-F31C-6590D31B661C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -0.93125930907925958 6 -0.069818553936510097
+		 13 1.5004576489773975 20 0.24025527330218643 26 0.7756046514721604 33 -1.2475420233803289
+		 40 -0.93125930907925958;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine3_rotateX1";
+	rename -uid "1158A3E5-41A0-EF15-ED48-62BAFF0F5AAC";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -1.1591380146553765 6 -0.10494702675949262
+		 13 1.225900149843099 20 -1.1721771533331302 26 -0.18253561228962759 33 1.0609494985119483
+		 40 -1.1591380146553765;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine3_rotateY1";
+	rename -uid "04DC1988-4B1F-36FC-CF63-1FB5073FFA2F";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -0.068594642671836223 6 -0.0037557755801907438
+		 13 -0.018569764430479935 20 0.045549195822219078 26 0.068612473530014803 33 0.069918131569798744
+		 40 -0.068594642671836223;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine3_rotateZ1";
+	rename -uid "20042AF5-48CA-691B-0EF4-00A9A52CAC46";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -0.93125930907925958 6 -0.069818553936510097
+		 13 1.5004576489773975 20 0.24025527330218643 26 0.7756046514721604 33 -1.2475420233803289
+		 40 -0.93125930907925958;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine4_rotateX1";
+	rename -uid "80B5C628-4321-FFEC-4FAB-C58ACD915AE7";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -0.84796295171210223 6 -0.088960422015800053
+		 13 0.86924254136492518 20 -0.85736453781194866 26 -0.14481865759831411 33 0.75048783285194987
+		 40 -0.84796295171210223;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine4_rotateY1";
+	rename -uid "5F03D31C-4E14-58FF-F486-7F896C350013";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -0.050181749089796647 6 -0.0031836579238633251
+		 13 -0.013167664517966065 20 0.033317093548455835 26 0.049706262629871739 33 0.049768879552453946
+		 40 -0.050181749089796647;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "spine4_rotateZ1";
+	rename -uid "3308E6B2-402A-D7A9-892D-CDBD8941C096";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -0.9315818488562243 6 -0.069819522053030006
+		 13 1.5005564296556897 20 0.24047193990213964 26 0.77561171687723107 33 -1.2477449199856854
+		 40 -0.9315818488562243;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail_rotateX1";
+	rename -uid "ED3D80E6-4772-6CCA-CC35-CE83D88CC05A";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 0 5 -1.3450960279127235 10 0 15 2.5540195269999302
+		 24 2.8933682456962568 29 0.97091178893926777 40 0;
+	setAttr -s 7 ".kit[0:6]"  1 9 9 9 9 9 1;
+	setAttr -s 7 ".kot[0:6]"  1 9 9 9 9 9 1;
+	setAttr -s 7 ".kix[0:6]"  0.99858314856705832 1 0.98692338938072421 
+		0.99627380239513352 0.99888009273070222 0.99714339193278667 0.99949496338800203;
+	setAttr -s 7 ".kiy[0:6]"  -0.053213676793659404 0 0.16119002293337958 
+		0.086246800874827348 -0.047313426702193254 -0.075531820610768394 -0.031777636193030215;
+	setAttr -s 7 ".kox[0:6]"  0.99858314724950059 1 0.98692338938072421 
+		0.99627380239513352 0.99888009273070222 0.99714339193278667 0.99949496351081712;
+	setAttr -s 7 ".koy[0:6]"  -0.053213701518332643 0 0.16119002293337958 
+		0.086246800874827348 -0.047313426702193254 -0.075531820610768394 -0.031777632330152225;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail_rotateY1";
+	rename -uid "94254167-4F19-9021-ABC2-848892528E46";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail_rotateZ1";
+	rename -uid "8353AFD8-4E82-8D2C-D82E-6BA3232D97A2";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 -4.0538476738030385 5 1.3463800963996511
+		 10 6.8652114787328307 15 8.9919742578522861 24 -5.927300388047728 29 -9.2403559689500891
+		 35 -7.8792277903136432 40 -4.0538476738030385;
+	setAttr -s 8 ".kit[0:7]"  1 9 9 9 9 9 9 1;
+	setAttr -s 8 ".kot[0:7]"  1 9 9 9 9 9 9 1;
+	setAttr -s 8 ".kix[0:7]"  0.88534640496862704 0.90939412433244649 
+		0.95235282617421613 0.93392774690672486 0.87787509048451284 0.99724897737545015 0.98104916742960979 
+		0.88304973799708819;
+	setAttr -s 8 ".kiy[0:7]"  0.46493197696988731 0.41593548373470507 
+		0.30499851553406515 -0.35746183510653046 -0.47888967989173481 -0.074124740293769337 
+		0.19375895098206325 0.46927940528354101;
+	setAttr -s 8 ".kox[0:7]"  0.88534635617182278 0.90939412433244649 
+		0.95235282617421613 0.93392774690672486 0.87787509048451284 0.99724897737545015 0.98104916742960979 
+		0.88304969634551567;
+	setAttr -s 8 ".koy[0:7]"  0.46493206989115737 0.41593548373470507 
+		0.30499851553406515 -0.35746183510653046 -0.47888967989173481 -0.074124740293769337 
+		0.19375895098206325 0.46927948365988925;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail1_rotateX1";
+	rename -uid "C9A77633-44CC-1EB3-A9F5-72AB697BC74D";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 0 5 -1.3450960279127235 10 -4.636885530069045
+		 15 2.5540195269999311 24 2.8933682456962586 29 0.78534814672466957 40 0;
+	setAttr -s 7 ".kit[0:6]"  1 9 9 9 9 9 9;
+	setAttr -s 7 ".kot[0:6]"  1 9 9 9 9 9 9;
+	setAttr -s 7 ".kix[0:6]"  0.9986892970440846 0.98165491904356239 
+		0.98692338938072421 0.97554606386488119 0.99860274884288347 0.99714339193278667 0.99955311569296845;
+	setAttr -s 7 ".kiy[0:6]"  -0.05118288746829467 -0.19066625269715912 
+		0.16119002293337964 0.21979508019456928 -0.052844583482483574 -0.075531820610768435 
+		-0.029892622977570258;
+	setAttr -s 7 ".kox[0:6]"  0.99868929805707485 0.98165491904356239 
+		0.98692338938072421 0.97554606386488119 0.99860274884288347 0.99714339193278667 0.99955311569296845;
+	setAttr -s 7 ".koy[0:6]"  -0.051182867702654448 -0.19066625269715912 
+		0.16119002293337964 0.21979508019456928 -0.052844583482483574 -0.075531820610768435 
+		-0.029892622977570258;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail1_rotateY1";
+	rename -uid "DEF40674-4F9C-1898-CBB0-188CE482F713";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail1_rotateZ1";
+	rename -uid "96D690E6-4175-54E2-AF15-85BD38356D7A";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 -2.1007549967245596 5 -8.7127484686475878
+		 10 -4.9054971628835995 15 -1.8979043096647907 24 9.4471914440158073 29 3.3421336051077741
+		 35 1.0297385691837659 40 -2.1007549967245596;
+	setAttr -s 8 ".kit[0:7]"  1 9 9 9 9 9 9 1;
+	setAttr -s 8 ".kot[0:7]"  1 9 9 9 9 9 9 1;
+	setAttr -s 8 ".kix[0:7]"  0.91427555507746783 0.99316929567274759 
+		0.96158863144634643 0.91885867054306758 0.98793180120131996 0.95227591202179973 0.9791888340334447 
+		0.9237602830656888;
+	setAttr -s 8 ".kiy[0:7]"  -0.40509284045486194 -0.11668226143205396 
+		0.27449463359625514 0.39458680105627753 0.1548894966584741 -0.30523857453318315 -0.20295129293557898 
+		-0.38297119921790279;
+	setAttr -s 8 ".kox[0:7]"  0.91427552049217009 0.99316929567274759 
+		0.96158863144634643 0.91885867054306758 0.98793180120131996 0.95227591202179973 0.9791888340334447 
+		0.92376030924165853;
+	setAttr -s 8 ".koy[0:7]"  -0.40509291851224905 -0.11668226143205396 
+		0.27449463359625514 0.39458680105627753 0.1548894966584741 -0.30523857453318315 -0.20295129293557898 
+		-0.38297113607915084;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail2_rotateX1";
+	rename -uid "3C5DDD58-4B32-C81D-649F-CE9BC014FBCD";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 0 5 -4.5472871491759426 10 -1.7685833394480635
+		 15 2.554019526999932 24 2.8933682456962577 40 0;
+	setAttr -s 6 ".kit[0:5]"  3 9 9 9 9 9;
+	setAttr -s 6 ".kot[0:5]"  3 9 9 9 9 9;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail2_rotateY1";
+	rename -uid "F7DB06DA-4CB6-66A1-C06F-E4983A4588F7";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr -s 8 ".kit[6:7]"  18 9;
+	setAttr -s 8 ".kot[6:7]"  18 9;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail2_rotateZ1";
+	rename -uid "E8C044A5-47F9-6513-D0EF-DD8D2F7713D4";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 -2.7954455778443572 5 -6.2749339484081181
+		 10 -3.5472361838050883 15 -3.6357703616372672 24 8.5894751953881823 29 9.1779876034484431
+		 35 2.3116200705583605 40 -2.7954455778443572;
+	setAttr -s 8 ".kit[0:7]"  1 9 9 9 9 9 18 9;
+	setAttr -s 8 ".kot[0:7]"  1 9 9 9 9 9 18 9;
+	setAttr -s 8 ".kix[0:7]"  0.91669356255205126 0.99950452910462562 
+		0.99394490019307924 0.93994632489499552 0.93372944898823407 0.97259434882203433 0.90988537063800068 
+		0.91938549726198293;
+	setAttr -s 8 ".kiy[0:7]"  -0.39959093129803186 -0.031475328423078305 
+		0.10987964042610346 0.34132229097495453 0.35797949116133543 -0.23250856465825739 
+		-0.41485975015533644 -0.39335773466951968;
+	setAttr -s 8 ".kox[0:7]"  0.91669364962279032 0.99950452910462562 
+		0.99394490019307924 0.93994632489499552 0.93372944898823407 0.97259434882203433 0.90988537063800068 
+		0.91938549726198293;
+	setAttr -s 8 ".koy[0:7]"  -0.39959073155073171 -0.031475328423078305 
+		0.10987964042610346 0.34132229097495453 0.35797949116133543 -0.23250856465825739 
+		-0.41485975015533638 -0.39335773466951968;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail3_rotateX1";
+	rename -uid "E4300D2D-48ED-2E5B-8006-46ABA42189AD";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -4.4547795552921405 5 -3.2021911212632235
+		 10 -3.3409801944873361 15 -4.5282387097570798 24 1.6255779490302329 35 0 40 -4.4547795552921405;
+	setAttr -s 7 ".kit[0:6]"  3 9 9 9 9 9 3;
+	setAttr -s 7 ".kot[0:6]"  3 9 9 9 9 9 3;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail3_rotateY1";
+	rename -uid "5A3B13C0-4F56-BD01-196B-F8B04837439E";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail3_rotateZ1";
+	rename -uid "2255F715-4F4B-7D71-B909-0EAA62E3F490";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 4.4076998393277522 5 1.5560325218153472
+		 10 -13.405984850396322 15 -1.5448981191411519 24 0.30652858168886088 29 15.516738842089637
+		 35 2.9421777162701983 40 4.4076998393277522;
+	setAttr -s 8 ".kit[0:7]"  1 9 9 9 9 9 9 1;
+	setAttr -s 8 ".kot[0:7]"  1 9 9 9 9 9 9 1;
+	setAttr -s 8 ".kix[0:7]"  0.96834342713223265 0.80146798523479046 
+		0.99166936940178341 0.92516178540365079 0.89066128630220687 0.9950011391631165 0.92098235613453949 
+		0.96834344987139098;
+	setAttr -s 8 ".kiy[0:7]"  0.24962172808031449 -0.59803768162523463 
+		-0.12880940101665381 0.37957301119643505 0.45466743129731457 0.099863572257858246 
+		-0.38960428602477204 0.24962163986956934;
+	setAttr -s 8 ".kox[0:7]"  0.96834342912649651 0.80146798523479046 
+		0.99166936940178341 0.92516178540365079 0.89066128630220687 0.9950011391631165 0.92098235613453949 
+		0.96834344861619681;
+	setAttr -s 8 ".koy[0:7]"  0.24962172034407973 -0.59803768162523463 
+		-0.12880940101665381 0.37957301119643505 0.45466743129731457 0.099863572257858246 
+		-0.38960428602477204 0.24962164473877468;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail4_rotateX1";
+	rename -uid "2539B55F-404D-7C7B-5283-60AEA0B1282C";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 6 ".ktv[0:5]"  0 -4.4547795552921405 5 -2.6293933622152257
+		 15 1.2536774565917927 24 4.264488374741112 35 0 40 -4.4547795552921405;
+	setAttr -s 6 ".kit[0:5]"  3 9 9 9 9 3;
+	setAttr -s 6 ".kot[0:5]"  3 9 9 9 9 3;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail4_rotateY1";
+	rename -uid "A021F96B-4092-D0D9-7533-A28B652E2F0D";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail4_rotateZ1";
+	rename -uid "3DFDE03E-4674-F9FD-FC41-4EA1F80E8F26";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 3.5062831789136339 5 -0.27966679482566248
+		 10 -7.7280936120442041 15 -5.1277653633286402 24 -2.5126933333768044 29 10.781116419653923
+		 35 8.2889031532510113 40 3.5062831789136339;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail5_rotateX1";
+	rename -uid "07190870-46F1-44DF-D7C7-7A8852EB11D3";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 -4.4547795552921414 5 -9.8863714455571063
+		 15 -11.736417347755049 24 3.0896513384641286 29 7.6558677805951216 35 0 40 -4.4547795552921414;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail5_rotateY1";
+	rename -uid "0447B051-4C18-BD35-0000-5D8856426500";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail5_rotateZ1";
+	rename -uid "1FF2FD39-4708-1D16-E535-B8ACB6EA013E";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 6.9636069333210227 5 6.5626288191839235
+		 10 1.855541755240993 15 -5.1277653633286402 24 -4.8882625588675648 29 1.1974806780555383
+		 35 5.3877085627296619 40 6.9636069333210227;
+	setAttr -s 8 ".kit[0:7]"  1 9 9 9 9 9 9 1;
+	setAttr -s 8 ".kot[0:7]"  1 9 9 9 9 9 9 1;
+	setAttr -s 8 ".kix[0:7]"  0.99474009257433638 0.97786639424840494 
+		0.8981016701814889 0.98024480667456504 0.98255916554708822 0.93124160494844843 0.97673178648481718 
+		0.99708699509872756;
+	setAttr -s 8 ".kiy[0:7]"  0.10243118775646856 -0.2092302917830566 
+		-0.43978789207664659 -0.19778806583700739 0.18595022505877576 0.36440235072380883 
+		0.21446448953189792 0.076272696326995168;
+	setAttr -s 8 ".kox[0:7]"  0.9947400953625023 0.97786639424840494 
+		0.8981016701814889 0.98024480667456504 0.98255916554708822 0.93124160494844843 0.97673178648481718 
+		0.99708699579930193;
+	setAttr -s 8 ".koy[0:7]"  0.10243116067974579 -0.2092302917830566 
+		-0.43978789207664659 -0.19778806583700739 0.18595022505877576 0.36440235072380883 
+		0.21446448953189792 0.076272687168623912;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail6_rotateX1";
+	rename -uid "1E7E07F5-456E-7534-C68B-BF935FB7CA9F";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 10.408729654044629 5 5.2373924269693592
+		 15 -9.5958119799225106 24 0.2840579312156275 29 4.8502743733466129 35 9.1782984322843983
+		 40 10.408729654044629;
+	setAttr -s 7 ".kit[0:6]"  3 9 9 9 9 9 3;
+	setAttr -s 7 ".kot[0:6]"  3 9 9 9 9 9 3;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail6_rotateY1";
+	rename -uid "5ADBE91C-44CA-E7D6-66D2-F283B1FB93B9";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail6_rotateZ1";
+	rename -uid "12085206-45DF-EC09-D4EA-5B850BE2550C";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 4.4076998393277522 5 9.1971012270431309
+		 10 8.9570670760309792 15 -7.7096167497433035 24 -8.0808333059142328 29 -9.9932134538975319
+		 35 12.40954361149501 40 4.4076998393277522;
+	setAttr -s 8 ".kit[0:7]"  3 9 9 9 9 9 9 3;
+	setAttr -s 8 ".kot[0:7]"  3 9 9 9 9 9 9 3;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail7_rotateX1";
+	rename -uid "9D670864-45AC-F6E4-B329-80AC1DF449BF";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 10.408729654044629 5 6.4991346256579732
+		 15 -3.4875977944176353 24 3.0896513384641291 29 7.6558677805951154 35 0 40 10.408729654044629;
+	setAttr -s 7 ".kit[0:6]"  3 9 9 9 9 9 3;
+	setAttr -s 7 ".kot[0:6]"  3 9 9 9 9 9 3;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail7_rotateY1";
+	rename -uid "E85ABAB5-4B8A-0A75-7E39-25A4836C8861";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail7_rotateZ1";
+	rename -uid "3B3E5B6A-46A0-57AD-B100-FFB034DDF512";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 4.4076998393277522 5 7.0446868060515033
+		 10 8.9570670760309792 15 -7.7096167497433035 24 -8.0808333059142328 29 -9.9932134538975319
+		 35 12.40954361149501 40 4.4076998393277522;
+	setAttr -s 8 ".kit[0:7]"  3 9 9 9 9 9 9 3;
+	setAttr -s 8 ".kot[0:7]"  3 9 9 9 9 9 9 3;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail8_rotateX1";
+	rename -uid "365CACB4-4A4F-BE8A-E00E-81A1B66EC268";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 10.408729654044629 5 6.6324523484375959
+		 15 -3.4875977944176353 24 3.0896513384641291 29 6.3839910117603909 35 9.023135307092442
+		 40 10.408729654044629;
+	setAttr -s 7 ".kit[0:6]"  3 9 9 9 9 9 3;
+	setAttr -s 7 ".kot[0:6]"  3 9 9 9 9 9 3;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail8_rotateY1";
+	rename -uid "C68501EE-4511-D7EA-9E29-67970B6EC14A";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 0 5 0 10 0 15 0 24 0 29 0 35 0 40 0;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "tail8_rotateZ1";
+	rename -uid "E7A96059-4F71-75FE-0CBF-A6B07F9E124A";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 8 ".ktv[0:7]"  0 4.4076998393277522 5 7.0446868060515033
+		 10 8.9570670760309792 15 -7.7096167497433035 24 -8.0808333059142328 29 -9.9932134538975319
+		 35 12.40954361149501 40 4.4076998393277522;
+	setAttr -s 8 ".kit[0:7]"  3 9 9 9 9 9 9 3;
+	setAttr -s 8 ".kot[0:7]"  3 9 9 9 9 9 9 3;
+	setAttr ".pre" 3;
+	setAttr ".pst" 3;
+createNode animCurveTA -n "neck_rotateX1";
+	rename -uid "6C2DCA59-4BA2-F463-B089-E6BF8A4D41D8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 0 4 -2.5695949209728428 8 -0.80478491238215955
+		 20 0 24 -3.0080671704305848 28 -1.096438038387044 40 0;
+createNode animCurveTA -n "neck_rotateY1";
+	rename -uid "23C44EA0-4B3C-6F24-0B2A-BCA7E53A0CF8";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 0 20 0 40 0;
+createNode animCurveTA -n "neck_rotateZ1";
+	rename -uid "F2370833-42C7-B901-2E23-709808B38B84";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 4.4461272304965211 20 -3.4431855514608358
+		 40 4.4461272304965211;
+createNode animCurveTA -n "head_rotateX1";
+	rename -uid "90B8B1E0-4987-6216-1FEE-D8BEFC5DA94D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 7 ".ktv[0:6]"  0 0 5 -2.5695949209728428 11 -0.50023095070621881
+		 20 0 25 -3.0080671704305848 31 -0.46630123471632845 40 0;
+	setAttr -s 7 ".kit[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kot[0:6]"  1 18 18 18 18 18 1;
+	setAttr -s 7 ".kix[0:6]"  0.99545761087336848 1 0.99756969722370226 
+		1 1 0.99788719325344555 0.99604494596388138;
+	setAttr -s 7 ".kiy[0:6]"  -0.095205803154457688 0 0.069675671371080647 
+		0 0 0.064970374331386513 -0.08885080539763697;
+	setAttr -s 7 ".kox[0:6]"  0.99545761294494339 1 0.99756969722370226 
+		1 1 0.99788719325344577 0.99604494661519882;
+	setAttr -s 7 ".koy[0:6]"  -0.095205781494378319 0 0.069675671371080647 
+		0 0 0.064970374331386527 -0.088850798096165723;
+createNode animCurveTA -n "head_rotateY1";
+	rename -uid "6651BFCC-4295-5C26-07CE-16B9B8F620FE";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 0 20 0 40 0;
+createNode animCurveTA -n "head_rotateZ1";
+	rename -uid "77DC030F-400E-D700-CCFF-FEA94C17AD97";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 3 ".ktv[0:2]"  0 4.4461272304965211 20 -3.4431855514608358
+		 40 4.4461272304965211;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -3740,298 +3850,106 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
-connectAttr "world_translateX.o" "DinoRigRN.phl[1]";
-connectAttr "world_translateY.o" "DinoRigRN.phl[2]";
-connectAttr "world_translateZ.o" "DinoRigRN.phl[3]";
-connectAttr "world_visibility.o" "DinoRigRN.phl[4]";
-connectAttr "world_rotateX.o" "DinoRigRN.phl[5]";
-connectAttr "world_rotateY.o" "DinoRigRN.phl[6]";
-connectAttr "world_rotateZ.o" "DinoRigRN.phl[7]";
-connectAttr "world_scaleX.o" "DinoRigRN.phl[8]";
-connectAttr "world_scaleY.o" "DinoRigRN.phl[9]";
-connectAttr "world_scaleZ.o" "DinoRigRN.phl[10]";
-connectAttr "spine1_translateX.o" "DinoRigRN.phl[11]";
-connectAttr "spine1_translateY.o" "DinoRigRN.phl[12]";
-connectAttr "spine1_translateZ.o" "DinoRigRN.phl[13]";
-connectAttr "spine1_rotateX.o" "DinoRigRN.phl[14]";
-connectAttr "spine1_rotateY.o" "DinoRigRN.phl[15]";
-connectAttr "spine1_rotateZ.o" "DinoRigRN.phl[16]";
-connectAttr "spine1_visibility.o" "DinoRigRN.phl[17]";
-connectAttr "spine1_scaleX.o" "DinoRigRN.phl[18]";
-connectAttr "spine1_scaleY.o" "DinoRigRN.phl[19]";
-connectAttr "spine1_scaleZ.o" "DinoRigRN.phl[20]";
-connectAttr "hip_translateX.o" "DinoRigRN.phl[21]";
-connectAttr "hip_translateY.o" "DinoRigRN.phl[22]";
-connectAttr "hip_translateZ.o" "DinoRigRN.phl[23]";
-connectAttr "hip_rotateX.o" "DinoRigRN.phl[24]";
-connectAttr "hip_rotateY.o" "DinoRigRN.phl[25]";
-connectAttr "hip_rotateZ.o" "DinoRigRN.phl[26]";
-connectAttr "hip_scaleX.o" "DinoRigRN.phl[27]";
-connectAttr "hip_scaleY.o" "DinoRigRN.phl[28]";
-connectAttr "hip_scaleZ.o" "DinoRigRN.phl[29]";
-connectAttr "hip_visibility.o" "DinoRigRN.phl[30]";
-connectAttr "spine2_translateX.o" "DinoRigRN.phl[31]";
-connectAttr "spine2_translateY.o" "DinoRigRN.phl[32]";
-connectAttr "spine2_translateZ.o" "DinoRigRN.phl[33]";
-connectAttr "spine2_rotateX.o" "DinoRigRN.phl[34]";
-connectAttr "spine2_rotateY.o" "DinoRigRN.phl[35]";
-connectAttr "spine2_rotateZ.o" "DinoRigRN.phl[36]";
-connectAttr "spine2_scaleX.o" "DinoRigRN.phl[37]";
-connectAttr "spine2_scaleY.o" "DinoRigRN.phl[38]";
-connectAttr "spine2_scaleZ.o" "DinoRigRN.phl[39]";
-connectAttr "spine2_visibility.o" "DinoRigRN.phl[40]";
-connectAttr "spine3_translateX.o" "DinoRigRN.phl[41]";
-connectAttr "spine3_translateY.o" "DinoRigRN.phl[42]";
-connectAttr "spine3_translateZ.o" "DinoRigRN.phl[43]";
-connectAttr "spine3_rotateX.o" "DinoRigRN.phl[44]";
-connectAttr "spine3_rotateY.o" "DinoRigRN.phl[45]";
-connectAttr "spine3_rotateZ.o" "DinoRigRN.phl[46]";
-connectAttr "spine3_scaleX.o" "DinoRigRN.phl[47]";
-connectAttr "spine3_scaleY.o" "DinoRigRN.phl[48]";
-connectAttr "spine3_scaleZ.o" "DinoRigRN.phl[49]";
-connectAttr "spine3_visibility.o" "DinoRigRN.phl[50]";
-connectAttr "spine4_translateX.o" "DinoRigRN.phl[51]";
-connectAttr "spine4_translateY.o" "DinoRigRN.phl[52]";
-connectAttr "spine4_translateZ.o" "DinoRigRN.phl[53]";
-connectAttr "spine4_rotateX.o" "DinoRigRN.phl[54]";
-connectAttr "spine4_rotateY.o" "DinoRigRN.phl[55]";
-connectAttr "spine4_rotateZ.o" "DinoRigRN.phl[56]";
-connectAttr "spine4_scaleX.o" "DinoRigRN.phl[57]";
-connectAttr "spine4_scaleY.o" "DinoRigRN.phl[58]";
-connectAttr "spine4_scaleZ.o" "DinoRigRN.phl[59]";
-connectAttr "spine4_visibility.o" "DinoRigRN.phl[60]";
-connectAttr "neck_translateX.o" "DinoRigRN.phl[61]";
-connectAttr "neck_translateY.o" "DinoRigRN.phl[62]";
-connectAttr "neck_translateZ.o" "DinoRigRN.phl[63]";
-connectAttr "neck_rotateX.o" "DinoRigRN.phl[64]";
-connectAttr "neck_rotateY.o" "DinoRigRN.phl[65]";
-connectAttr "neck_rotateZ.o" "DinoRigRN.phl[66]";
-connectAttr "neck_scaleX.o" "DinoRigRN.phl[67]";
-connectAttr "neck_scaleY.o" "DinoRigRN.phl[68]";
-connectAttr "neck_scaleZ.o" "DinoRigRN.phl[69]";
-connectAttr "neck_visibility.o" "DinoRigRN.phl[70]";
-connectAttr "head_translateX.o" "DinoRigRN.phl[71]";
-connectAttr "head_translateY.o" "DinoRigRN.phl[72]";
-connectAttr "head_translateZ.o" "DinoRigRN.phl[73]";
-connectAttr "head_rotateX.o" "DinoRigRN.phl[74]";
-connectAttr "head_rotateY.o" "DinoRigRN.phl[75]";
-connectAttr "head_rotateZ.o" "DinoRigRN.phl[76]";
-connectAttr "head_scaleX.o" "DinoRigRN.phl[77]";
-connectAttr "head_scaleY.o" "DinoRigRN.phl[78]";
-connectAttr "head_scaleZ.o" "DinoRigRN.phl[79]";
-connectAttr "head_visibility.o" "DinoRigRN.phl[80]";
-connectAttr "shoulderL_translateX.o" "DinoRigRN.phl[81]";
-connectAttr "shoulderL_translateY.o" "DinoRigRN.phl[82]";
-connectAttr "shoulderL_translateZ.o" "DinoRigRN.phl[83]";
-connectAttr "shoulderL_rotateX.o" "DinoRigRN.phl[84]";
-connectAttr "shoulderL_rotateY.o" "DinoRigRN.phl[85]";
-connectAttr "shoulderL_rotateZ.o" "DinoRigRN.phl[86]";
-connectAttr "shoulderL_scaleX.o" "DinoRigRN.phl[87]";
-connectAttr "shoulderL_scaleY.o" "DinoRigRN.phl[88]";
-connectAttr "shoulderL_scaleZ.o" "DinoRigRN.phl[89]";
-connectAttr "shoulderL_visibility.o" "DinoRigRN.phl[90]";
-connectAttr "armL_translateX.o" "DinoRigRN.phl[91]";
-connectAttr "armL_translateY.o" "DinoRigRN.phl[92]";
-connectAttr "armL_translateZ.o" "DinoRigRN.phl[93]";
-connectAttr "armL_rotateX.o" "DinoRigRN.phl[94]";
-connectAttr "armL_rotateY.o" "DinoRigRN.phl[95]";
-connectAttr "armL_rotateZ.o" "DinoRigRN.phl[96]";
-connectAttr "armL_scaleX.o" "DinoRigRN.phl[97]";
-connectAttr "armL_scaleY.o" "DinoRigRN.phl[98]";
-connectAttr "armL_scaleZ.o" "DinoRigRN.phl[99]";
-connectAttr "armL_visibility.o" "DinoRigRN.phl[100]";
-connectAttr "WristL_translateX.o" "DinoRigRN.phl[101]";
-connectAttr "WristL_translateY.o" "DinoRigRN.phl[102]";
-connectAttr "WristL_translateZ.o" "DinoRigRN.phl[103]";
-connectAttr "WristL_rotateX.o" "DinoRigRN.phl[104]";
-connectAttr "WristL_rotateY.o" "DinoRigRN.phl[105]";
-connectAttr "WristL_rotateZ.o" "DinoRigRN.phl[106]";
-connectAttr "WristL_scaleX.o" "DinoRigRN.phl[107]";
-connectAttr "WristL_scaleY.o" "DinoRigRN.phl[108]";
-connectAttr "WristL_scaleZ.o" "DinoRigRN.phl[109]";
-connectAttr "WristL_visibility.o" "DinoRigRN.phl[110]";
-connectAttr "shoulderR_translateX.o" "DinoRigRN.phl[111]";
-connectAttr "shoulderR_translateY.o" "DinoRigRN.phl[112]";
-connectAttr "shoulderR_translateZ.o" "DinoRigRN.phl[113]";
-connectAttr "shoulderR_rotateX.o" "DinoRigRN.phl[114]";
-connectAttr "shoulderR_rotateY.o" "DinoRigRN.phl[115]";
-connectAttr "shoulderR_rotateZ.o" "DinoRigRN.phl[116]";
-connectAttr "shoulderR_scaleX.o" "DinoRigRN.phl[117]";
-connectAttr "shoulderR_scaleY.o" "DinoRigRN.phl[118]";
-connectAttr "shoulderR_scaleZ.o" "DinoRigRN.phl[119]";
-connectAttr "shoulderR_visibility.o" "DinoRigRN.phl[120]";
-connectAttr "armR_translateX.o" "DinoRigRN.phl[121]";
-connectAttr "armR_translateY.o" "DinoRigRN.phl[122]";
-connectAttr "armR_translateZ.o" "DinoRigRN.phl[123]";
-connectAttr "armR_rotateX.o" "DinoRigRN.phl[124]";
-connectAttr "armR_rotateY.o" "DinoRigRN.phl[125]";
-connectAttr "armR_rotateZ.o" "DinoRigRN.phl[126]";
-connectAttr "armR_scaleX.o" "DinoRigRN.phl[127]";
-connectAttr "armR_scaleY.o" "DinoRigRN.phl[128]";
-connectAttr "armR_scaleZ.o" "DinoRigRN.phl[129]";
-connectAttr "armR_visibility.o" "DinoRigRN.phl[130]";
-connectAttr "WristR_translateX.o" "DinoRigRN.phl[131]";
-connectAttr "WristR_translateY.o" "DinoRigRN.phl[132]";
-connectAttr "WristR_translateZ.o" "DinoRigRN.phl[133]";
-connectAttr "WristR_rotateX.o" "DinoRigRN.phl[134]";
-connectAttr "WristR_rotateY.o" "DinoRigRN.phl[135]";
-connectAttr "WristR_rotateZ.o" "DinoRigRN.phl[136]";
-connectAttr "WristR_scaleX.o" "DinoRigRN.phl[137]";
-connectAttr "WristR_scaleY.o" "DinoRigRN.phl[138]";
-connectAttr "WristR_scaleZ.o" "DinoRigRN.phl[139]";
-connectAttr "WristR_visibility.o" "DinoRigRN.phl[140]";
-connectAttr "tail_translateX.o" "DinoRigRN.phl[141]";
-connectAttr "tail_translateY.o" "DinoRigRN.phl[142]";
-connectAttr "tail_translateZ.o" "DinoRigRN.phl[143]";
-connectAttr "tail_rotateX.o" "DinoRigRN.phl[144]";
-connectAttr "tail_rotateY.o" "DinoRigRN.phl[145]";
-connectAttr "tail_rotateZ.o" "DinoRigRN.phl[146]";
-connectAttr "tail_scaleX.o" "DinoRigRN.phl[147]";
-connectAttr "tail_scaleY.o" "DinoRigRN.phl[148]";
-connectAttr "tail_scaleZ.o" "DinoRigRN.phl[149]";
-connectAttr "tail_visibility.o" "DinoRigRN.phl[150]";
-connectAttr "tail1_translateX.o" "DinoRigRN.phl[151]";
-connectAttr "tail1_translateY.o" "DinoRigRN.phl[152]";
-connectAttr "tail1_translateZ.o" "DinoRigRN.phl[153]";
-connectAttr "tail1_rotateX.o" "DinoRigRN.phl[154]";
-connectAttr "tail1_rotateY.o" "DinoRigRN.phl[155]";
-connectAttr "tail1_rotateZ.o" "DinoRigRN.phl[156]";
-connectAttr "tail1_scaleX.o" "DinoRigRN.phl[157]";
-connectAttr "tail1_scaleY.o" "DinoRigRN.phl[158]";
-connectAttr "tail1_scaleZ.o" "DinoRigRN.phl[159]";
-connectAttr "tail1_visibility.o" "DinoRigRN.phl[160]";
-connectAttr "tail2_translateX.o" "DinoRigRN.phl[161]";
-connectAttr "tail2_translateY.o" "DinoRigRN.phl[162]";
-connectAttr "tail2_translateZ.o" "DinoRigRN.phl[163]";
-connectAttr "tail2_rotateX.o" "DinoRigRN.phl[164]";
-connectAttr "tail2_rotateY.o" "DinoRigRN.phl[165]";
-connectAttr "tail2_rotateZ.o" "DinoRigRN.phl[166]";
-connectAttr "tail2_scaleX.o" "DinoRigRN.phl[167]";
-connectAttr "tail2_scaleY.o" "DinoRigRN.phl[168]";
-connectAttr "tail2_scaleZ.o" "DinoRigRN.phl[169]";
-connectAttr "tail2_visibility.o" "DinoRigRN.phl[170]";
-connectAttr "tail3_translateX.o" "DinoRigRN.phl[171]";
-connectAttr "tail3_translateY.o" "DinoRigRN.phl[172]";
-connectAttr "tail3_translateZ.o" "DinoRigRN.phl[173]";
-connectAttr "tail3_rotateX.o" "DinoRigRN.phl[174]";
-connectAttr "tail3_rotateY.o" "DinoRigRN.phl[175]";
-connectAttr "tail3_rotateZ.o" "DinoRigRN.phl[176]";
-connectAttr "tail3_scaleX.o" "DinoRigRN.phl[177]";
-connectAttr "tail3_scaleY.o" "DinoRigRN.phl[178]";
-connectAttr "tail3_scaleZ.o" "DinoRigRN.phl[179]";
-connectAttr "tail3_visibility.o" "DinoRigRN.phl[180]";
-connectAttr "tail4_translateX.o" "DinoRigRN.phl[181]";
-connectAttr "tail4_translateY.o" "DinoRigRN.phl[182]";
-connectAttr "tail4_translateZ.o" "DinoRigRN.phl[183]";
-connectAttr "tail4_rotateX.o" "DinoRigRN.phl[184]";
-connectAttr "tail4_rotateY.o" "DinoRigRN.phl[185]";
-connectAttr "tail4_rotateZ.o" "DinoRigRN.phl[186]";
-connectAttr "tail4_scaleX.o" "DinoRigRN.phl[187]";
-connectAttr "tail4_scaleY.o" "DinoRigRN.phl[188]";
-connectAttr "tail4_scaleZ.o" "DinoRigRN.phl[189]";
-connectAttr "tail4_visibility.o" "DinoRigRN.phl[190]";
-connectAttr "tail5_translateX.o" "DinoRigRN.phl[191]";
-connectAttr "tail5_translateY.o" "DinoRigRN.phl[192]";
-connectAttr "tail5_translateZ.o" "DinoRigRN.phl[193]";
-connectAttr "tail5_rotateX.o" "DinoRigRN.phl[194]";
-connectAttr "tail5_rotateY.o" "DinoRigRN.phl[195]";
-connectAttr "tail5_rotateZ.o" "DinoRigRN.phl[196]";
-connectAttr "tail5_scaleX.o" "DinoRigRN.phl[197]";
-connectAttr "tail5_scaleY.o" "DinoRigRN.phl[198]";
-connectAttr "tail5_scaleZ.o" "DinoRigRN.phl[199]";
-connectAttr "tail5_visibility.o" "DinoRigRN.phl[200]";
-connectAttr "tail6_translateX.o" "DinoRigRN.phl[201]";
-connectAttr "tail6_translateY.o" "DinoRigRN.phl[202]";
-connectAttr "tail6_translateZ.o" "DinoRigRN.phl[203]";
-connectAttr "tail6_rotateX.o" "DinoRigRN.phl[204]";
-connectAttr "tail6_rotateY.o" "DinoRigRN.phl[205]";
-connectAttr "tail6_rotateZ.o" "DinoRigRN.phl[206]";
-connectAttr "tail6_scaleX.o" "DinoRigRN.phl[207]";
-connectAttr "tail6_scaleY.o" "DinoRigRN.phl[208]";
-connectAttr "tail6_scaleZ.o" "DinoRigRN.phl[209]";
-connectAttr "tail6_visibility.o" "DinoRigRN.phl[210]";
-connectAttr "tail7_translateX.o" "DinoRigRN.phl[211]";
-connectAttr "tail7_translateY.o" "DinoRigRN.phl[212]";
-connectAttr "tail7_translateZ.o" "DinoRigRN.phl[213]";
-connectAttr "tail7_rotateX.o" "DinoRigRN.phl[214]";
-connectAttr "tail7_rotateY.o" "DinoRigRN.phl[215]";
-connectAttr "tail7_rotateZ.o" "DinoRigRN.phl[216]";
-connectAttr "tail7_scaleX.o" "DinoRigRN.phl[217]";
-connectAttr "tail7_scaleY.o" "DinoRigRN.phl[218]";
-connectAttr "tail7_scaleZ.o" "DinoRigRN.phl[219]";
-connectAttr "tail7_visibility.o" "DinoRigRN.phl[220]";
-connectAttr "tail8_translateX.o" "DinoRigRN.phl[221]";
-connectAttr "tail8_translateY.o" "DinoRigRN.phl[222]";
-connectAttr "tail8_translateZ.o" "DinoRigRN.phl[223]";
-connectAttr "tail8_rotateX.o" "DinoRigRN.phl[224]";
-connectAttr "tail8_rotateY.o" "DinoRigRN.phl[225]";
-connectAttr "tail8_rotateZ.o" "DinoRigRN.phl[226]";
-connectAttr "tail8_scaleX.o" "DinoRigRN.phl[227]";
-connectAttr "tail8_scaleY.o" "DinoRigRN.phl[228]";
-connectAttr "tail8_scaleZ.o" "DinoRigRN.phl[229]";
-connectAttr "tail8_visibility.o" "DinoRigRN.phl[230]";
-connectAttr "nurbsCircle7_translateX.o" "DinoRigRN.phl[231]";
-connectAttr "nurbsCircle7_translateY.o" "DinoRigRN.phl[232]";
-connectAttr "nurbsCircle7_translateZ.o" "DinoRigRN.phl[233]";
-connectAttr "nurbsCircle7_visibility.o" "DinoRigRN.phl[234]";
-connectAttr "nurbsCircle7_rotateX.o" "DinoRigRN.phl[235]";
-connectAttr "nurbsCircle7_rotateY.o" "DinoRigRN.phl[236]";
-connectAttr "nurbsCircle7_rotateZ.o" "DinoRigRN.phl[237]";
-connectAttr "nurbsCircle7_scaleX.o" "DinoRigRN.phl[238]";
-connectAttr "nurbsCircle7_scaleY.o" "DinoRigRN.phl[239]";
-connectAttr "nurbsCircle7_scaleZ.o" "DinoRigRN.phl[240]";
-connectAttr "nurbsCircle22_toe.o" "DinoRigRN.phl[241]";
-connectAttr "nurbsCircle22_translateX.o" "DinoRigRN.phl[242]";
-connectAttr "nurbsCircle22_translateY.o" "DinoRigRN.phl[243]";
-connectAttr "nurbsCircle22_translateZ.o" "DinoRigRN.phl[244]";
-connectAttr "nurbsCircle22_visibility.o" "DinoRigRN.phl[245]";
-connectAttr "nurbsCircle22_rotateX.o" "DinoRigRN.phl[246]";
-connectAttr "nurbsCircle22_rotateY.o" "DinoRigRN.phl[247]";
-connectAttr "nurbsCircle22_rotateZ.o" "DinoRigRN.phl[248]";
-connectAttr "nurbsCircle22_scaleX.o" "DinoRigRN.phl[249]";
-connectAttr "nurbsCircle22_scaleY.o" "DinoRigRN.phl[250]";
-connectAttr "nurbsCircle22_scaleZ.o" "DinoRigRN.phl[251]";
-connectAttr "nurbsCircle25_translateX.o" "DinoRigRN.phl[252]";
-connectAttr "nurbsCircle25_translateY.o" "DinoRigRN.phl[253]";
-connectAttr "nurbsCircle25_translateZ.o" "DinoRigRN.phl[254]";
-connectAttr "nurbsCircle25_visibility.o" "DinoRigRN.phl[255]";
-connectAttr "nurbsCircle25_rotateX.o" "DinoRigRN.phl[256]";
-connectAttr "nurbsCircle25_rotateY.o" "DinoRigRN.phl[257]";
-connectAttr "nurbsCircle25_rotateZ.o" "DinoRigRN.phl[258]";
-connectAttr "nurbsCircle25_scaleX.o" "DinoRigRN.phl[259]";
-connectAttr "nurbsCircle25_scaleY.o" "DinoRigRN.phl[260]";
-connectAttr "nurbsCircle25_scaleZ.o" "DinoRigRN.phl[261]";
-connectAttr "nurbsCircle7_visibility1.o" "DinoRigRN.phl[262]";
-connectAttr "nurbsCircle7_translateX1.o" "DinoRigRN.phl[263]";
-connectAttr "nurbsCircle7_translateY1.o" "DinoRigRN.phl[264]";
-connectAttr "nurbsCircle7_translateZ1.o" "DinoRigRN.phl[265]";
-connectAttr "nurbsCircle7_rotateX1.o" "DinoRigRN.phl[266]";
-connectAttr "nurbsCircle7_rotateY1.o" "DinoRigRN.phl[267]";
-connectAttr "nurbsCircle7_rotateZ1.o" "DinoRigRN.phl[268]";
-connectAttr "nurbsCircle7_scaleX1.o" "DinoRigRN.phl[269]";
-connectAttr "nurbsCircle7_scaleY1.o" "DinoRigRN.phl[270]";
-connectAttr "nurbsCircle7_scaleZ1.o" "DinoRigRN.phl[271]";
-connectAttr "nurbsCircle8_toe.o" "DinoRigRN.phl[272]";
-connectAttr "nurbsCircle8_translateX.o" "DinoRigRN.phl[273]";
-connectAttr "nurbsCircle8_translateY.o" "DinoRigRN.phl[274]";
-connectAttr "nurbsCircle8_translateZ.o" "DinoRigRN.phl[275]";
-connectAttr "nurbsCircle8_visibility.o" "DinoRigRN.phl[276]";
-connectAttr "nurbsCircle8_rotateX.o" "DinoRigRN.phl[277]";
-connectAttr "nurbsCircle8_rotateY.o" "DinoRigRN.phl[278]";
-connectAttr "nurbsCircle8_rotateZ.o" "DinoRigRN.phl[279]";
-connectAttr "nurbsCircle8_scaleX.o" "DinoRigRN.phl[280]";
-connectAttr "nurbsCircle8_scaleY.o" "DinoRigRN.phl[281]";
-connectAttr "nurbsCircle8_scaleZ.o" "DinoRigRN.phl[282]";
-connectAttr "nurbsCircle24_translateX.o" "DinoRigRN.phl[283]";
-connectAttr "nurbsCircle24_translateY.o" "DinoRigRN.phl[284]";
-connectAttr "nurbsCircle24_translateZ.o" "DinoRigRN.phl[285]";
-connectAttr "nurbsCircle24_visibility.o" "DinoRigRN.phl[286]";
-connectAttr "nurbsCircle24_rotateX.o" "DinoRigRN.phl[287]";
-connectAttr "nurbsCircle24_rotateY.o" "DinoRigRN.phl[288]";
-connectAttr "nurbsCircle24_rotateZ.o" "DinoRigRN.phl[289]";
-connectAttr "nurbsCircle24_scaleX.o" "DinoRigRN.phl[290]";
-connectAttr "nurbsCircle24_scaleY.o" "DinoRigRN.phl[291]";
-connectAttr "nurbsCircle24_scaleZ.o" "DinoRigRN.phl[292]";
+	setAttr -s 4 ".sol";
+connectAttr "spine1_translateX1.o" "DinoRig02RN.phl[1]";
+connectAttr "spine1_translateY1.o" "DinoRig02RN.phl[2]";
+connectAttr "spine1_translateZ1.o" "DinoRig02RN.phl[3]";
+connectAttr "spine1_rotateX1.o" "DinoRig02RN.phl[4]";
+connectAttr "spine1_rotateY1.o" "DinoRig02RN.phl[5]";
+connectAttr "spine1_rotateZ1.o" "DinoRig02RN.phl[6]";
+connectAttr "tail_rotateX1.o" "DinoRig02RN.phl[7]";
+connectAttr "tail_rotateY1.o" "DinoRig02RN.phl[8]";
+connectAttr "tail_rotateZ1.o" "DinoRig02RN.phl[9]";
+connectAttr "tail1_rotateX1.o" "DinoRig02RN.phl[10]";
+connectAttr "tail1_rotateY1.o" "DinoRig02RN.phl[11]";
+connectAttr "tail1_rotateZ1.o" "DinoRig02RN.phl[12]";
+connectAttr "tail2_rotateX1.o" "DinoRig02RN.phl[13]";
+connectAttr "tail2_rotateY1.o" "DinoRig02RN.phl[14]";
+connectAttr "tail2_rotateZ1.o" "DinoRig02RN.phl[15]";
+connectAttr "tail3_rotateX1.o" "DinoRig02RN.phl[16]";
+connectAttr "tail3_rotateY1.o" "DinoRig02RN.phl[17]";
+connectAttr "tail3_rotateZ1.o" "DinoRig02RN.phl[18]";
+connectAttr "tail4_rotateX1.o" "DinoRig02RN.phl[19]";
+connectAttr "tail4_rotateY1.o" "DinoRig02RN.phl[20]";
+connectAttr "tail4_rotateZ1.o" "DinoRig02RN.phl[21]";
+connectAttr "tail5_rotateX1.o" "DinoRig02RN.phl[22]";
+connectAttr "tail5_rotateY1.o" "DinoRig02RN.phl[23]";
+connectAttr "tail5_rotateZ1.o" "DinoRig02RN.phl[24]";
+connectAttr "tail6_rotateX1.o" "DinoRig02RN.phl[25]";
+connectAttr "tail6_rotateY1.o" "DinoRig02RN.phl[26]";
+connectAttr "tail6_rotateZ1.o" "DinoRig02RN.phl[27]";
+connectAttr "tail7_rotateX1.o" "DinoRig02RN.phl[28]";
+connectAttr "tail7_rotateY1.o" "DinoRig02RN.phl[29]";
+connectAttr "tail7_rotateZ1.o" "DinoRig02RN.phl[30]";
+connectAttr "tail8_rotateX1.o" "DinoRig02RN.phl[31]";
+connectAttr "tail8_rotateY1.o" "DinoRig02RN.phl[32]";
+connectAttr "tail8_rotateZ1.o" "DinoRig02RN.phl[33]";
+connectAttr "spine2_rotateX1.o" "DinoRig02RN.phl[34]";
+connectAttr "spine2_rotateY1.o" "DinoRig02RN.phl[35]";
+connectAttr "spine2_rotateZ1.o" "DinoRig02RN.phl[36]";
+connectAttr "spine3_rotateX1.o" "DinoRig02RN.phl[37]";
+connectAttr "spine3_rotateY1.o" "DinoRig02RN.phl[38]";
+connectAttr "spine3_rotateZ1.o" "DinoRig02RN.phl[39]";
+connectAttr "spine4_rotateX1.o" "DinoRig02RN.phl[40]";
+connectAttr "spine4_rotateY1.o" "DinoRig02RN.phl[41]";
+connectAttr "spine4_rotateZ1.o" "DinoRig02RN.phl[42]";
+connectAttr "neck_rotateX1.o" "DinoRig02RN.phl[43]";
+connectAttr "neck_rotateY1.o" "DinoRig02RN.phl[44]";
+connectAttr "neck_rotateZ1.o" "DinoRig02RN.phl[45]";
+connectAttr "head_rotateX1.o" "DinoRig02RN.phl[46]";
+connectAttr "head_rotateY1.o" "DinoRig02RN.phl[47]";
+connectAttr "head_rotateZ1.o" "DinoRig02RN.phl[48]";
+connectAttr "shoulderL_rotateX1.o" "DinoRig02RN.phl[49]";
+connectAttr "shoulderL_rotateY1.o" "DinoRig02RN.phl[50]";
+connectAttr "shoulderL_rotateZ1.o" "DinoRig02RN.phl[51]";
+connectAttr "armL_rotateX1.o" "DinoRig02RN.phl[52]";
+connectAttr "armL_rotateY1.o" "DinoRig02RN.phl[53]";
+connectAttr "armL_rotateZ1.o" "DinoRig02RN.phl[54]";
+connectAttr "WristL_rotateX1.o" "DinoRig02RN.phl[55]";
+connectAttr "WristL_rotateY1.o" "DinoRig02RN.phl[56]";
+connectAttr "WristL_rotateZ1.o" "DinoRig02RN.phl[57]";
+connectAttr "shoulderR_rotateX1.o" "DinoRig02RN.phl[58]";
+connectAttr "shoulderR_rotateY1.o" "DinoRig02RN.phl[59]";
+connectAttr "shoulderR_rotateZ1.o" "DinoRig02RN.phl[60]";
+connectAttr "armR_rotateX1.o" "DinoRig02RN.phl[61]";
+connectAttr "armR_rotateY1.o" "DinoRig02RN.phl[62]";
+connectAttr "armR_rotateZ1.o" "DinoRig02RN.phl[63]";
+connectAttr "WristR_rotateX1.o" "DinoRig02RN.phl[64]";
+connectAttr "WristR_rotateY1.o" "DinoRig02RN.phl[65]";
+connectAttr "WristR_rotateZ1.o" "DinoRig02RN.phl[66]";
+connectAttr "hip_translateX1.o" "DinoRig02RN.phl[67]";
+connectAttr "hip_translateY1.o" "DinoRig02RN.phl[68]";
+connectAttr "hip_translateZ1.o" "DinoRig02RN.phl[69]";
+connectAttr "hip_rotateX1.o" "DinoRig02RN.phl[70]";
+connectAttr "hip_rotateY1.o" "DinoRig02RN.phl[71]";
+connectAttr "hip_rotateZ1.o" "DinoRig02RN.phl[72]";
+connectAttr "nurbsCircle22_toe1.o" "DinoRig02RN.phl[73]";
+connectAttr "nurbsCircle22_translateX1.o" "DinoRig02RN.phl[74]";
+connectAttr "nurbsCircle22_translateY1.o" "DinoRig02RN.phl[75]";
+connectAttr "nurbsCircle22_translateZ1.o" "DinoRig02RN.phl[76]";
+connectAttr "nurbsCircle22_rotateX1.o" "DinoRig02RN.phl[77]";
+connectAttr "nurbsCircle22_rotateY1.o" "DinoRig02RN.phl[78]";
+connectAttr "nurbsCircle22_rotateZ1.o" "DinoRig02RN.phl[79]";
+connectAttr "nurbsCircle22_visibility1.o" "DinoRig02RN.phl[80]";
+connectAttr "nurbsCircle22_scaleX1.o" "DinoRig02RN.phl[81]";
+connectAttr "nurbsCircle22_scaleY1.o" "DinoRig02RN.phl[82]";
+connectAttr "nurbsCircle22_scaleZ1.o" "DinoRig02RN.phl[83]";
+connectAttr "nurbsCircle8_toe1.o" "DinoRig02RN.phl[84]";
+connectAttr "nurbsCircle8_translateX1.o" "DinoRig02RN.phl[85]";
+connectAttr "nurbsCircle8_translateY1.o" "DinoRig02RN.phl[86]";
+connectAttr "nurbsCircle8_translateZ1.o" "DinoRig02RN.phl[87]";
+connectAttr "nurbsCircle8_rotateX1.o" "DinoRig02RN.phl[88]";
+connectAttr "nurbsCircle8_rotateY1.o" "DinoRig02RN.phl[89]";
+connectAttr "nurbsCircle8_rotateZ1.o" "DinoRig02RN.phl[90]";
+connectAttr "nurbsCircle8_visibility1.o" "DinoRig02RN.phl[91]";
+connectAttr "nurbsCircle8_scaleX1.o" "DinoRig02RN.phl[92]";
+connectAttr "nurbsCircle8_scaleY1.o" "DinoRig02RN.phl[93]";
+connectAttr "nurbsCircle8_scaleZ1.o" "DinoRig02RN.phl[94]";
+connectAttr ":mentalrayGlobals.msg" ":mentalrayItemsList.glb";
+connectAttr ":miDefaultOptions.msg" ":mentalrayItemsList.opt" -na;
+connectAttr ":miDefaultFramebuffer.msg" ":mentalrayItemsList.fb" -na;
+connectAttr ":miDefaultOptions.msg" ":mentalrayGlobals.opt";
+connectAttr ":miDefaultFramebuffer.msg" ":mentalrayGlobals.fb";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
